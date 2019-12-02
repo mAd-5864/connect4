@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
+a{
+  color: inherit;
+  text-decoration: inherit;
+}
+body {
+  background:#000;
+  margin: 0;
+  font-family: 'Righteous', cursive;
+}
+.menu{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 100px;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  font-weight: bold;
+  margin: 1px;
+  color: #000;
+  border: 2px solid #F2C53D;
+  background: #F2C53D;
+  filter: brightness(90%);
+  background: linear-gradient(to bottom, #FFF125 0%,#F2C53D 100%);
+  transition-duration: 1s;
+  transition-property: all;
+  transition-timing-function: ease;
+}
+.button:hover {
+  background: #ff1616;
+  border: 2px solid #ad0505;
+  cursor: pointer;
+}
+.button:focus{
+  outline: 0;
+}
+.logo{
+  width: 100%;
+  height: 100%;
+  margin-top: -100px;
+  border-radius: 50px;
+  position: absolute;
+  animation: 2s shrinkToBottom ease 0.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes shrinkToBottom {
+  0% {
+    transform:  translate(0px,0px)  scaleX(1) scaleY(1);
+  }
+  20%{
+    transform:  translate(0px,150px)
+  }
+  100% {
+    transform:  translate(0px,150px)  scaleX(0.40) scaleY(0.40);
+  }
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 3px;
+  bottom: 3px;
+  border-radius: 50%;
+  background-color: #000;
+  transition: .4s;
+}
+input:checked + .slider {
+  background-color: #000;
+  border: 2px solid #333;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #000;
+}
+input:checked + .slider:before {
+  transform: translateX(26px);
+  background-color: #fff;
+}

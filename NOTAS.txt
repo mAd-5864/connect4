@@ -1,0 +1,22 @@
+Menu
+	Jogar 1x1 / Jogar vs CPU / Settings / Scores / Quit
+
+Board
+	Quadrado 6x6 / pecas Red Black
+
+Atualizar Pecas 
+	descer eixo y / ocupar pos 
+
+Score
+	Win Count (PvP)
+	Timer (CPU)
+
+Controls
+
+Win Condition
+
+Nomear players
+
+Rodar Board
+
+Victory Screen

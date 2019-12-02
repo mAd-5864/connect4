@@ -1,0 +1,56 @@
+body {
+  background: #000;
+  text-align: center;
+  font-family: 'Bungee', cursive;
+}
+.border{
+  border: 3px solid white;
+  width: 640px;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background: #5D2D80;
+  background: linear-gradient(to bottom, #5D2D80 0%,#532080 100%);
+  margin: 0 auto;
+
+}
+.board button {
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 0;
+  margin: 1px;
+  background: #ccc;
+}
+.board button:hover {
+  filter: brightness(65%);
+  border: 3px #444 solid;
+}
+.board button:focus {
+  outline: 0;
+}
+.board button.red {
+  background: #ad0505;
+  background: linear-gradient(to bottom, #ff1616 0%,#ad0505 100%);
+}
+.board button.yellow {
+  background: #F2C53D;
+  background: linear-gradient(to bottom, #FFF125 0%,#F2C53D 100%);
+}
+#rotate{
+  background: #FF930D;
+  background: linear-gradient(to bottom, #FFB50D 0%,#FF930D 100%);
+  display: block;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  border: 3px solid white;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top: none;
+}
+.rotate button:hover{
+  outline: 0;
+}
