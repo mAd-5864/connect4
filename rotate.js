@@ -1,4 +1,4 @@
-
+// let myBoard = document.querySelector('.board').style.transform
 let ang = 0
 function rotateElemR() {
     ang = ang + 90
@@ -11,16 +11,13 @@ function rotateElemL() {
         = `rotate(${ang}deg)`;
 }
 
-
-
-let chance
 function chanceRotate() {
     let chance = Math.random() * 10;
-    if (chance > 9.2) {
+    if (chance > 9.35) {
         rotateElemR()
         console.log("Rodou Direita");
 
-    } else if (chance < 0.5) {
+    } else if (chance < 0.35) {
         rotateElemL()
         console.log("Rodou Esquerda");
     } else {
