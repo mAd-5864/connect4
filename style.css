@@ -12,7 +12,34 @@ body {
   background: #5D2D80;
   background: linear-gradient(to bottom, #5D2D80 0%,#532080 100%);
   margin: 0 auto;
+  margin-top: 5px;
 
+}
+.arrows{
+  padding: 0px 25px;
+  width: 640px;
+  height: 80px;
+  display: flex;
+  margin: 0 auto;
+}
+.arrows button {
+  all: inherit;
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: none;
+}
+.arrows img {
+  width: 60px;
+  height: 60px;
+}
+.arrows img:hover{
+  filter: brightness(60%);
+  border: 1px #fff solid;
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
 }
 .board button {
   display: block;

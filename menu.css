@@ -13,6 +13,11 @@ body {
   justify-content: space-evenly;
   margin: 100px;
 }
+
+button {
+  all: inherit;  
+}
+
 .button {
   display: inline-flex;
   align-items: center;

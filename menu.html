@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Connect 4 | Menu</title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" href="menu.css">
 </head>
 <body>
 
     <div class="menu">
-        <div class="button" id="single"><p>PLAYER<br>X<br>BOT</p></div>
-        <div class="button" id="multiplayer"><p>PLAYER <br> X <br> PLAYER</p></div>
-        <a href="options.html"><div class="button" id="options"><p>OPTIONS</p></div></a>
-        <div class="button" id="scores"><a href="scores.html"><p>SCORES</p></a></div>
-        <div class="button" id="exit"><p>QUIT</p></div>
+        <div class="button" id="singleplayer"><button onclick="javascript:window.location.href='singleplayer.html'">PLAYER<br>X<br>BOT</button></div>
+        <div class="button" id="multiplayer"><button onclick="javascript:window.location.href='multiplayer.html'">PLAYER <br> X <br> PLAYER</button></div>
+        <div class="button" id="options"><button onclick="javascript:window.location.href='options.html'">OPTIONS</button></div>
+        <div class="button" id="scores"><button onclick="javascript:window.location.href='scores.html'">SCORES</button></div>
+        <div class="button" id="exit"><button onclick="javascript:window.close()">QUIT</button></div>
         <img id="logo" class="logo logo-animation" src="./logos/logo-projeto-3.png" alt="">
     </div>
       
