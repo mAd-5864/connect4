@@ -1,4 +1,3 @@
-// let myBoard = document.querySelector('.board').style.transform
 let ang = 0
 function rotateElemR() {
     ang = ang + 90
