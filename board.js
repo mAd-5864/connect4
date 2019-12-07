@@ -26,11 +26,6 @@ let board =
  [0, 0, 0, 0, 0, 0]];
 
 
-for (const y of board) {
-  console.log(board[y]);
-
-}
-
 function winCheck() {
   console.log("----Horizontal----");
   for (let x = 0; x < 6; x++) {

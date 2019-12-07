@@ -35,11 +35,11 @@ body {
   height: 60px;
 }
 .arrows img:hover{
-  filter: brightness(60%);
-  border: 1px #fff solid;
+  filter: brightness(200%);
+  border: 3px #fff solid;
   border-radius: 50%;
-  width: 46px;
-  height: 46px;
+  width: 54px;
+  height: 54px;
 }
 .board button {
   display: block;
