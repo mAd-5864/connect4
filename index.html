@@ -9,15 +9,49 @@
 </head>
 
 <body>
+    <button onclick="dropPiece(3, 1), checkWin()">Cair Peça fila 4</button>
     <script>
-        let board = [[1, 7, 13, 19, 25, 31],
-        [2, 8, 14, 20, 26, 32],
-        [3, 9, 15, 21, 27, 33],
-        [4, 10, 16, 22, 28, 34],
-        [5, 11, 17, 23, 29, 35],
-        [6, 12, 18, 24, 30, 36]];
+        let board =
+            [[0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0],
+            [0, 0, 1, 0, 0, 0],
+            [0, 1, 1, 2, 0, 0],
+            [1, 1, 1, 2, 0, 0]];
 
-//ele tenta ler um fila que nao existe se estiver muito para baixo
+        //ele tenta ler um fila que nao existe se estiver muito para baixo
+console.log("---Estado do tabuleiro---");
+console.log(board);
+        function dropPiece(column, color) { //column => Número da coluna // color => red = 1 yellow = 2
+            if (board[5][column] === 0) {
+                board[5][column] = color
+            } else {
+                for (let i = 0; i < 6; i++) {
+                    if (board[i][column] === 0) {
+                        console.log("Espaço livre.");
+                    } else {
+                        board[i - 1][column] = color
+                    }
+                }
+            }
+            console.log(board);
+        }
+        function checkWin() {
+            console.log("----Diagonal Esquerda----");
+            for (let x = 0; x < 6; x++) {
+                for (let y = 0; y < 6; y++) {
+                    if ((x < 3) && (y > 3) && (board[y][x] != 0) && (board[y - 1][x + 1] == board[y][x])) {
+                        if (board[y - 2][x + 2] == board[y][x]) {
+                            if (board[y - 3][x + 3] == board[y][x]) {
+                                console.log("Ganhaste");
+                                console.log(`Posicao [${x + 1},${y + 1}]`);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
 
     </script>
 </body>

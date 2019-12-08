@@ -30,7 +30,7 @@ function winCheck() {
   console.log("----Horizontal----");
   for (let x = 0; x < 6; x++) {
     for (let y = 0; y < 6; y++) {
-      if (board[y][x] != 0 && board[y][x + 1] == board[y][x] && x < 3) {
+      if (x < 3 && board[y][x] != 0 && board[y][x + 1] == board[y][x]) {
         if (board[y][x + 2] == board[y][x]) {
           if (board[y][x + 3] == board[y][x]) {
             console.log("Ganhaste");
@@ -43,7 +43,7 @@ function winCheck() {
   console.log("----Vertical----");
   for (let x = 0; x < 6; x++) {
     for (let y = 0; y < 6; y++) {
-      if (board[y][x] != 0 && board[y + 1][x] == board[y][x] && y < 3) {
+      if (y < 3 && board[y][x] != 0 && board[y + 1][x] == board[y][x]) {
         if (board[y + 2][x] == board[y][x]) {
           if (board[y + 2][x] == board[y][x]) {
             console.log("Ganhaste");
@@ -56,7 +56,7 @@ function winCheck() {
   console.log("----Diagonal Direita----");
   for (let x = 0; x < 6; x++) {
     for (let y = 0; y < 6; y++) {
-      if (board[y][x] != 0 && board[y + 1][x + 1] == board[y][x] && x < 3 && y < 3) {
+      if (x < 3 && y < 3 && board[y][x] != 0 && board[y + 1][x + 1] == board[y][x]) {
         if (board[y + 2][x + 2] == board[y][x]) {
           if (board[y + 3][x + 3] == board[y][x]) {
             console.log("Ganhaste");
@@ -69,7 +69,7 @@ function winCheck() {
   console.log("----Diagonal Esquerda----");
   for (let x = 0; x < 6; x++) {
     for (let y = 0; y < 6; y++) {
-      if ((board[y][x] != 0) && (board[y - 1][x + 1] == board[y][x]) && (x < 3) && (y > 3)) {
+      if ((x < 3) && (y > 3) && (board[y][x] != 0) && (board[y - 1][x + 1] == board[y][x])) {
         if (board[y - 2][x + 2] == board[y][x]) {
           if (board[y - 3][x + 3] == board[y][x]) {
             console.log("Ganhaste");
@@ -79,5 +79,4 @@ function winCheck() {
       }
     }
   }
-
 }

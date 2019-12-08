@@ -19,37 +19,60 @@ let board = [[1, 0, 0, 0, 0, 0],
 
 arrow0.addEventListener("click", function () {
     for (const i of board) {
-        console.log(board[i][0]);
+        if (board[i][0]===0) {
+            console.log("Espaço livre.");
+        } else {
+            board[i-1][0]=1
+        }
     }
 }
 )
 arrow1.addEventListener("click", function () {
     for (const i of board) {
-        console.log(board[i][1]);
+        if (board[i][1]===0) {
+            console.log("Espaço livre.");
+        } else {
+            board[i-1][1]=1
+        }
     }
 }
 )
 arrow2.addEventListener("click", function () {
     for (const i of board) {
-        console.log(board[i][2]);
+        if (board[i][2]===0) {
+            console.log("Espaço livre.");
+        } else {
+            board[i-1][2]=1
+        }
     }
 }
 )
 arrow3.addEventListener("click", function () {
     for (const i of board) {
-        console.log(board[i][3]);
-    }
+        if (board[i][3]===0) {
+            console.log("Espaço livre.");
+        } else {
+            board[i-1][3]=1
+        }    }
 }
 )
 arrow4.addEventListener("click", function () {
     for (const i of board) {
-        console.log(board[i][4]);
+        if (board[i][4]===0) {
+            console.log("Espaço livre.");
+        } else {
+            board[i-1][4]=1
+        }
     }
 }
 )
 arrow5.addEventListener("click", function () {
     for (const i of board) {
-        console.log(board[i][5]);
+        if (board[i][5]===0) {
+            console.log("Espaço livre.");
+        } else {
+            board[i-1][5]=1
+        }
     }
 }
 )
