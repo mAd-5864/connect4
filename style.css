@@ -3,6 +3,9 @@ body {
   text-align: center;
   font-family: 'Bungee', cursive;
 }
+body p{
+  color: white;
+}
 .border{
   border: 3px solid white;
   width: 640px;
