@@ -7,6 +7,7 @@ function dropPiece(column, color) { //column => Número da coluna // color => re
                 console.log("Espaço livre.");
             } else {
                 board[i - 1][column] = color
+                break
             }
         }
     }
