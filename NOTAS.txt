@@ -1,11 +1,15 @@
 Menu
-	Jogar 1x1 / Jogar vs CPU / Settings / Scores / Quit
+	Jogar 1x1 / Jogar vs CPU / Settings / Scores / Quit 
 
 Board
-	Quadrado 6x6 / pecas Red Black
+	Quadrado 6x6 / pecas Red Black //done
 
 Atualizar Pecas 
-	descer eixo y / ocupar pos 
+	descer eixo y / ocupar pos // done
+
+Turnos Jogadas
+	mudar cor das setas
+	
 
 Score
 	Win Count (PvP)
