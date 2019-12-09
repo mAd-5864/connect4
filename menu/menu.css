@@ -15,9 +15,18 @@ body {
 }
 
 button {
-  all: inherit;  
+  border: none;
+  background: none;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
 }
-
+button:hover {
+  cursor: pointer;
+}
+button:focus{
+  outline: 0;
+}
 .button {
   display: inline-flex;
   align-items: center;
@@ -46,23 +55,25 @@ button {
   outline: 0;
 }
 .logo{
-  width: 100%;
-  height: 100%;
+  height: 100vh;
+  width: auto;
   margin-top: -100px;
   border-radius: 50px;
   position: absolute;
-  animation: 2s shrinkToBottom ease 0.5s;
+}
+.logo-animation{
+  animation: 2s shrinkToBottom ease-in 0.5s;
   animation-fill-mode: forwards;
 }
 @keyframes shrinkToBottom {
   0% {
     transform:  translate(0px,0px)  scaleX(1) scaleY(1);
   }
-  20%{
-    transform:  translate(0px,150px)
+  80%{
+    transform: translateY(50px) scaleX(0.40) scaleY(0.40);
   }
   100% {
-    transform:  translate(0px,150px)  scaleX(0.40) scaleY(0.40);
+    transform:  translateY(150px)  scaleX(0.50) scaleY(0.50);
   }
 }
 .switch {
