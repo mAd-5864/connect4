@@ -13,3 +13,5 @@ function dropPiece(column, color) { //column => Número da coluna // color => re
     console.log(board);
 }
 //função para facilitar as peças a cair
+
+const arrows = document.querySelectorAll(`#arrow${column}`)
