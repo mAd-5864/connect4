@@ -11,8 +11,12 @@ function dropPiece(column, color) { //column => Número da coluna // color => re
             }
         }
     }
-    console.log(board);
 }
 //função para facilitar as peças a cair
 
-const arrows = document.querySelectorAll(`#arrow${column}`)
+for (let i = 0; i < 5; i++) {
+    const seta = document.querySelector("#arrows") 
+    console.log(seta.innerHTML);
+    
+//    seta.innerHTML = <img src="./logos/arrow-down-red.png"></img>
+}
