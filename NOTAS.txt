@@ -9,15 +9,16 @@ Atualizar Pecas
 
 Turnos Jogadas
 	mudar cor das setas
+	mudar cor da peça que cai
 	
 
 Score
 	Win Count (PvP)
 	Timer (CPU)
 
-Controls
+Controls // done
 
-Win Condition
+Win Condition // done
 
 Nomear players
 
