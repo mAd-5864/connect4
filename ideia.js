@@ -13,35 +13,27 @@
         arrowColor2()
       }
     }
-    changeTurn()
+    changeTurn() 
 
-    function arrowColor() {
-      for (let i = 0; i < 6; i++) {
-        arrow = document.querySelector(`#arrow${i}`)
-        arrow.removeEventListener("click", function () {
-          dropPiece(i, 1)
-          changeTurn()
-        })
-        arrow.addEventListener("click", function () {
-          dropPiece(i, 1)
-          changeTurn()
-        })
-      }
+    for (let i = 0; i < 6; i++) {
+         arrow = document.querySelector(`#arrow${i}`)
+         arrow.addEventListener("click", changeTurn)
     }
+     function arrowColor() {
+      for (let i = 0; i < 6; i++) {
+         arrow = document.querySelector(`#arrow${i}`)
+        arrow.onclick = function() {
+          dropPiece(i, 1)
+        };
+    }}
 
     function arrowColor2() {
       for (let i = 0; i < 6; i++) {
         arrow = document.querySelector(`#arrow${i}`)
-        arrow.removeEventListener("click", function () {
+        arrow.onclick = function() {
           dropPiece(i, 2)
-          changeTurn()
-        })
-        arrow.addEventListener("click", function () {
-          dropPiece(i, 2)
-          changeTurn()
-        })
-      }
-    }
+        };
+    }} 
 
 //    seta.innerHTML = <img src="./logos/arrow-down-red.png"></img>
 
