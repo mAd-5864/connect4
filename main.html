@@ -10,13 +10,13 @@
 </head>
 
 <body>
-  <div class="arrows">
-    <button><img src="./logos/arrow-down-red.png" alt=""></button>
-    <button><img src="./logos/arrow-down-red.png" alt=""></button>
-    <button><img src="./logos/arrow-down-red.png" alt=""></button>
-    <button><img src="./logos/arrow-down-yellow.png" alt=""></button>
-    <button><img src="./logos/arrow-down-red.png" alt=""></button>
-    <button><img src="./logos/arrow-down-yellow.png" alt=""></button>
+  <div class="arrows" id="arrows">
+    <button><img src="./logos/arrow-down-red.png"></button>
+    <button><img src="./logos/arrow-down-red.png"></button>
+    <button><img src="./logos/arrow-down-red.png"></button>
+    <button><img src="./logos/arrow-down-yellow.png"></button>
+    <button><img src="./logos/arrow-down-red.png"></button>
+    <button><img src="./logos/arrow-down-yellow.png"></button>
   </div>
   <div class="border">
     <table id="board" class="board">
@@ -74,9 +74,26 @@
   </div>
   <div class="rotate"><button id="rotate" type="button" onclick="chanceRotate()">ROTATE</button></div>
 
-  <script type="text/javascript" src="rotate.js"></script>
+  <script src="board.js"></script>
+  <script type="text/javascript" src="functions.js"></script>
   <!--   <script src="connect4.js"></script> -->
+<script>
+  for (let i = 0; i < 6; i++) {
+    let arrow = document.querySelector("#arrows") 
+    arrow.classList.add(`arrow${i}`)
+    let x = document.querySelector(`.arrow${i}`).addEventListener("click", function () {
+      dropPiece(i,2)
+    })
+    console.log(arrow.innerHTML);
+    
+    
 
+    
+//    seta.innerHTML = <img src="./logos/arrow-down-red.png"></img>
+}
+console.log(board);
+
+</script>
 </body>
 
 </html>
