@@ -1,22 +1,48 @@
-function dropPiece(column, color) { //column => Número da coluna // color => red = 1 yellow = 2
-    if (board[5][column] === 0) {
-        board[5][column] = color
-    } else {
-        for (let i = 0; i < 6; i++) {
-            if (board[i][column] === 0) {
-                console.log("Espaço livre.");
-            } else {
-                board[i - 1][column] = color
-                break
-            }
-        }
-    }
-}
-//função para facilitar as peças a cair
+    let arrow
+    let turn = 1
 
-for (let i = 0; i < 5; i++) {
-    const seta = document.querySelector("#arrows") 
-    console.log(seta.innerHTML);
-    
+
+    function changeTurn() {
+      if (turn === 1) {
+        console.log(turn);
+        turn = 2
+        arrowColor()
+      } else {
+        console.log(turn);
+        turn = 1
+        arrowColor2()
+      }
+    }
+    changeTurn()
+
+    function arrowColor() {
+      for (let i = 0; i < 6; i++) {
+        arrow = document.querySelector(`#arrow${i}`)
+        arrow.removeEventListener("click", function () {
+          dropPiece(i, 1)
+          changeTurn()
+        })
+        arrow.addEventListener("click", function () {
+          dropPiece(i, 1)
+          changeTurn()
+        })
+      }
+    }
+
+    function arrowColor2() {
+      for (let i = 0; i < 6; i++) {
+        arrow = document.querySelector(`#arrow${i}`)
+        arrow.removeEventListener("click", function () {
+          dropPiece(i, 2)
+          changeTurn()
+        })
+        arrow.addEventListener("click", function () {
+          dropPiece(i, 2)
+          changeTurn()
+        })
+      }
+    }
+
 //    seta.innerHTML = <img src="./logos/arrow-down-red.png"></img>
-}
+
+console.log(board);
