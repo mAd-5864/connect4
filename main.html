@@ -11,12 +11,12 @@
 
 <body>
   <div class="arrows" id="arrows">
-    <button><img src="./logos/arrow-down-red.png"></button>
-    <button><img src="./logos/arrow-down-red.png"></button>
-    <button><img src="./logos/arrow-down-red.png"></button>
-    <button><img src="./logos/arrow-down-yellow.png"></button>
-    <button><img src="./logos/arrow-down-red.png"></button>
-    <button><img src="./logos/arrow-down-yellow.png"></button>
+    <button id="arrow0"><img src="./logos/arrow-down-red.png"></button>
+    <button id="arrow1"><img src="./logos/arrow-down-red.png"></button>
+    <button id="arrow2"><img src="./logos/arrow-down-red.png"></button>
+    <button id="arrow3"><img src="./logos/arrow-down-yellow.png"></button>
+    <button id="arrow4"><img src="./logos/arrow-down-red.png"></button>
+    <button id="arrow5"><img src="./logos/arrow-down-yellow.png"></button>
   </div>
   <div class="border">
     <table id="board" class="board">
@@ -54,20 +54,20 @@
           <td><button type="button" id="slot34" class="btn"></button></td>
         </tr>
         <tr>
-          <td><button type="button" class="yellow btn" id="slot5"></button></td>
+          <td><button type="button" class="btn" id="slot5"></button></td>
           <td><button type="button" id="slot11" class="btn"></button></td>
           <td><button type="button" id="slot17" class="btn"></button></td>
           <td><button type="button" id="slot23" class="btn"></button></td>
           <td><button type="button" id="slot29" class="btn"></button></td>
-          <td><button type="button" class="red btn" id="slot35"></button></td>
+          <td><button type="button" class="btn" id="slot35"></button></td>
         </tr>
         <tr>
-          <td><button type="button" class="red btn" id="slot6"></button></td>
-          <td><button type="button" class="red btn" id="slot12"></button></td>
-          <td><button type="button" class="red btn" id="slot18"></button></td>
-          <td><button type="button" class="yellow btn" id="slot24"></button></td>
-          <td><button type="button" class="yellow btn" id="slot30"></button></td>
-          <td><button type="button" class="yellow btn" id="slot36"></button></td>
+          <td><button type="button" class="btn" id="slot6"></button></td>
+          <td><button type="button" class="btn" id="slot12"></button></td>
+          <td><button type="button" class="btn" id="slot18"></button></td>
+          <td><button type="button" class="btn" id="slot24"></button></td>
+          <td><button type="button" class="btn" id="slot30"></button></td>
+          <td><button type="button" class="btn" id="slot36"></button></td>
         </tr>
       </tbody>
     </table>
@@ -76,24 +76,7 @@
 
   <script src="board.js"></script>
   <script type="text/javascript" src="functions.js"></script>
-  <!--   <script src="connect4.js"></script> -->
-<script>
-  for (let i = 0; i < 6; i++) {
-    let arrow = document.querySelector("#arrows") 
-    arrow.classList.add(`arrow${i}`)
-    let x = document.querySelector(`.arrow${i}`).addEventListener("click", function () {
-      dropPiece(i,2)
-    })
-    console.log(arrow.innerHTML);
-    
-    
-
-    
-//    seta.innerHTML = <img src="./logos/arrow-down-red.png"></img>
-}
-console.log(board);
-
-</script>
+  <!--  <script src="ideia.js"></script> -->
 </body>
 
 </html>
