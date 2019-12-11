@@ -45,7 +45,6 @@ function colorSlot() {
   for (let x = 0; x < 6; x++) {
     for (let y = 0; y < 6; y++) {
       i++
-      console.log(i);
       if (board[y][x] === 1) {
         document.querySelector(`#slot${i}`).className = 'red'
         
