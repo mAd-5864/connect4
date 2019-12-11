@@ -30,8 +30,7 @@ function chanceRotate() {
 
 }
 function dropPiece(column, color) { //column => Número da coluna // color => red = 1 yellow = 2
-
-  for (let i = 5; i >= 0; i--) {
+  for (let i = 6; i > 0; i--) {
     if (board[i][column] === 0) {
       console.log(`coluna: ${column}`);
       board[i][column] = color;
