@@ -34,6 +34,7 @@ function dropPiece(column, color) { //column => Número da coluna // color => re
                 break
             }
         }
+        colorPiece()
     }
 
 
@@ -45,8 +46,13 @@ function winCheck() {
           if (board[y][x + 2] == board[y][x]) {
             if (board[y][x + 3] == board[y][x]) {
               console.log("Ganhaste");
-              return board[y][x]
+              if (board[y][x] === 1) {
+                console.log("Jogador 1 Ganhou");
+              } else if (board[x][y] === 2) {
+                console.log("Jogador 2 Ganhou!");
+              }
               console.log(`Posicao [${x + 1},${y + 1}]`);
+              break
             }
           }
         }
@@ -59,7 +65,13 @@ function winCheck() {
           if (board[y + 2][x] == board[y][x]) {
             if (board[y + 2][x] == board[y][x]) {
               console.log("Ganhaste");
+              if (board[y][x] === 1) {
+                console.log("Jogador 1 Ganhou!");
+              } else if (board[x][y] === 2) {
+                console.log("Jogador 2 Ganhou!");
+              }
               console.log(`Posicao [${x + 1},${y + 1}]`);
+              break
             }
           }
         }
@@ -72,7 +84,13 @@ function winCheck() {
           if (board[y + 2][x + 2] == board[y][x]) {
             if (board[y + 3][x + 3] == board[y][x]) {
               console.log("Ganhaste");
+              if (board[y][x] === 1) {
+                console.log("Jogador 1 Ganhou");
+              } else if (board[x][y] === 2) {
+                console.log("Jogador 2 Ganhou!");
+              }
               console.log(`Posicao [${x + 1},${y + 1}]`);
+              break
             }
           }
         }
@@ -85,7 +103,13 @@ function winCheck() {
           if (board[y - 2][x + 2] == board[y][x]) {
             if (board[y - 3][x + 3] == board[y][x]) {
               console.log("Ganhaste");
+              if (board[y][x] === 1) {
+               console.log("Jogador 1 Ganhou");
+              } else if (board[x][y] === 2) {
+                console.log("Jogador 2 Ganhou!");
+              }
               console.log(`Posicao [${x + 1},${y + 1}]`);
+              break
             }
           }
         }

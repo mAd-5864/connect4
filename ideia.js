@@ -2,6 +2,7 @@
     let turn = 1
 
 
+
     function changeTurn() {
       if (turn === 1) {
         console.log(turn);
@@ -23,7 +24,8 @@
       for (let i = 0; i < 6; i++) {
          arrow = document.querySelector(`#arrow${i}`)
         arrow.onclick = function() {
-          dropPiece(i, 1)
+          dropPiece(i, 1);
+          winCheck()
         };
     }}
 
@@ -31,7 +33,8 @@
       for (let i = 0; i < 6; i++) {
         arrow = document.querySelector(`#arrow${i}`)
         arrow.onclick = function() {
-          dropPiece(i, 2)
+          dropPiece(i, 2);
+          winCheck()
         };
     }} 
 
