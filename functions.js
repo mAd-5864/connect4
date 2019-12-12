@@ -1,12 +1,11 @@
-let arrow
-let turn
-
 // board constructor
 const boardLenght = 6
 const board = []
 for (let k = 0; k < boardLenght; k++) {
   board[k] = new Array(boardLenght).fill(0)
 }
+const table = document.getElementById('boardConstructor').innerHTML
+
 
 // rotate board function
 let ang = 0
@@ -112,41 +111,36 @@ function winCheck() {
   }
 }
 
-//buttons to drop red pieces
-function arrowPlayer1() {
+//buttons to allow clicks
+let arrow
+let redArrow = '<img src="./logos/arrow-down-red.png"></img>';
+let yellowArrow = '<img src="./logos/arrow-down-yellow.png"></img>';
+
+function arrowPlayer(color, value) {
   for (let i = 0; i < boardLenght; i++) {
     arrow = document.querySelector(`#arrow${i}`)
-    arrow.innerHTML = '<img src="./logos/arrow-down-red.png"></img>'
+    arrow.innerHTML = color
     arrow.onclick = function () {
-      dropPiece(i, 1);
+      if (board[0][i]===0) {
+      dropPiece(i, value);
       winCheck();
       changeTurn();
+      }
     }
   }
 }
 
-//buttons to drop yellow pieces
-function arrowPlayer2() {
-  for (let i = 0; i < boardLenght; i++) {
-    arrow = document.querySelector(`#arrow${i}`)
-    arrow.innerHTML = '<img src="./logos/arrow-down-yellow.png"></img>'
-    arrow.onclick = function () {
-      dropPiece(i, 2);
-      winCheck();
-      changeTurn()
-    }
-  }
-}
 
 //switch turn btween the players
+let turn
 function changeTurn() {
   if (turn) {
-    arrowPlayer1()
+    arrowPlayer(redArrow, 1);
   } else {
-    arrowPlayer2()
+    arrowPlayer(yellowArrow, 2);
   }
   turn = !turn
 }
-arrowPlayer1()
+arrowPlayer(redArrow, 1)
 
 console.log(board);
