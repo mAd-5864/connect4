@@ -1,10 +1,21 @@
 // board constructor
 const boardLenght = 6
 const board = []
-for (let k = 0; k < boardLenght; k++) {
-  board[k] = new Array(boardLenght).fill(0)
+function resetBoard() {
+  for (let k = 0; k < boardLenght; k++) {
+    board[k] = new Array(boardLenght).fill(0)
+  }
+  for (let i = 0; i < boardLenght; i++) {
+    for (let j = 0; j < boardLenght; j++) {
+      document.querySelector(`#slot${i}${j}`).className = ''
+      
+    }
+    
+  }
+  //const table = document.getElementById('boardConstructor').innerHTML
 }
-const table = document.getElementById('boardConstructor').innerHTML
+resetBoard()
+
 
 
 // rotate board function
@@ -60,8 +71,12 @@ function winCheck() {
           if (board[y][x + 3] == board[y][x]) {
             if (board[y][x] === 1) {
               console.log("Jogador 1 Ganhou");
+              alert('Pedro Mantorras Ganhou!');
+              resetBoard();
             } else if (board[y][x] === 2) {
               console.log("Jogador 2 Ganhou!");
+              alert('Vladimir Putin Ganhou!');
+              resetBoard();
             }
             console.log(`Posicao [${x + 1},${y + 1}]`);
             break
