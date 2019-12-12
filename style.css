@@ -4,10 +4,10 @@ body {
   font-family: 'Bungee', cursive;
 }
 body p{
-  color: white;
+  color: #fff;
 }
 .border{
-  border: 3px solid white;
+  border: 3px solid #fff;
   width: 640px;
   display: flex;
   justify-content: center;
@@ -76,7 +76,7 @@ body p{
   padding: 20px;
   display: flex;
   justify-content: center;
-  border: 3px solid white;
+  border: 3px solid #fff;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   border-top: none;
