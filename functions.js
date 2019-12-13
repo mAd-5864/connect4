@@ -155,7 +155,7 @@ function arrowPlayer(color, value) {
   }
 }
 
-//switch turn btween the players
+//switch turn between the players
 let turn
 function changeTurn() {
   if (turn) {
