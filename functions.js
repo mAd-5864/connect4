@@ -16,8 +16,6 @@ function resetBoard() {
 }
 resetBoard()
 
-
-
 // rotate board function
 let ang = 0
 function rotateElemR() {
@@ -71,7 +69,7 @@ function winCheck() {
           if (board[y][x + 3] == board[y][x]) {
             if (board[y][x] === 1) {
               console.log("Jogador 1 Ganhou");
-              alert('Pedro Mantorras Ganhou!');
+              alert(`Jogador 1 Ganhou`);
               resetBoard();
             } else if (board[y][x] === 2) {
               console.log("Jogador 2 Ganhou!");
@@ -138,7 +136,7 @@ function arrowPlayer(color, value) {
     arrow.onclick = function () {
       if (board[0][i]===0) {
       dropPiece(i, value);
-      winCheck();
+      setTimeout(function(){winCheck()}, 1500)
       changeTurn();
       }
     }
@@ -159,3 +157,4 @@ function changeTurn() {
 arrowPlayer(redArrow, 1)
 
 console.log(board);
+
