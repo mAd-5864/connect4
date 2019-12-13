@@ -13,7 +13,7 @@ for (let r = 0; r < boardLength; r++) {
 }
 divArrows = document.querySelector("#arrows")
 for (let i = 0; i < boardLength; i++) {
-  divArrows.innerHTML += `<button id="arrow${i}"><img src="./logos/arrow-down-red.png"></img></button>`    
+  divArrows.innerHTML += `<button id="arrow${i}"><img src="../logos/arrow-down-red.png"></img></button>`    
 }
 
 function resetBoard() {
@@ -138,8 +138,8 @@ function winCheck() {
 
 //buttons to allow clicks
 let arrow
-let redArrow = '<img src="./logos/arrow-down-red.png"></img>';
-let yellowArrow = '<img src="./logos/arrow-down-yellow.png"></img>';
+let redArrow = '<img src="../logos/arrow-down-red.png"></img>';
+let yellowArrow = '<img src="../logos/arrow-down-yellow.png"></img>';
 
 function arrowPlayer(color, value) {
   for (let i = 0; i < boardLength; i++) {
@@ -155,7 +155,7 @@ function arrowPlayer(color, value) {
   }
 }
 
-//switch turn btween the players
+//switch turn between the players
 let turn
 function changeTurn() {
   if (turn) {
