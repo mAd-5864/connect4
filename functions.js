@@ -80,15 +80,12 @@ function winCheck() {
         if (board[y][x + 2] == board[y][x]) {
           if (board[y][x + 3] == board[y][x]) {
             if (board[y][x] === 1) {
-              console.log("Jogador 1 Ganhou");
-              alert(`Jogador 1 Ganhou`);
+              alert(`Jogador 1 Ganhou!`);
               resetBoard();
             } else if (board[y][x] === 2) {
-              console.log("Jogador 2 Ganhou!");
-              alert('Vladimir Putin Ganhou!');
+              alert('Jogador 2 Ganhou!');
               resetBoard();
             }
-            console.log(`Posicao [${x + 1},${y + 1}]`);
             break
           }
         }
@@ -97,11 +94,12 @@ function winCheck() {
         if (board[y + 2][x] == board[y][x]) {
           if (board[y + 3][x] == board[y][x]) {
             if (board[y][x] === 1) {
-              console.log("Jogador 1 Ganhou!");
+              alert('Jogador 1 Ganhou!');
+              resetBoard();
             } else if (board[y][x] === 2) {
-              console.log("Jogador 2 Ganhou!");
+              alert('Jogador 2 Ganhou!');
+              resetBoard();
             }
-            console.log(`Posicao [${x + 1},${y + 1}]`);
             break
           }
         }
@@ -110,11 +108,12 @@ function winCheck() {
         if (board[y + 2][x + 2] == board[y][x]) {
           if (board[y + 3][x + 3] == board[y][x]) {
             if (board[y][x] === 1) {
-              console.log("Jogador 1 Ganhou");
+              alert('Jogador 1 Ganhou!');
+              resetBoard();
             } else if (board[y][x] === 2) {
-              console.log("Jogador 2 Ganhou!");
+              alert('Jogador 2 Ganhou!');
+              resetBoard();
             }
-            console.log(`Posicao [${x + 1},${y + 1}]`);
             break
           }
         }
@@ -123,11 +122,12 @@ function winCheck() {
         if (board[y - 2][x + 2] == board[y][x]) {
           if (board[y - 3][x + 3] == board[y][x]) {
             if (board[y][x] === 1) {
-              console.log("Jogador 1 Ganhou");
+              alert('Jogador 1 Ganhou!');
+              resetBoard();
             } else if (board[y][x] === 2) {
-              console.log("Jogador 2 Ganhou!");
+              alert('Jogador 2 Ganhou!');
+              resetBoard();
             }
-            console.log(`Posicao [${x + 1},${y + 1}]`);
             break
           }
         }
@@ -168,4 +168,3 @@ function changeTurn() {
 arrowPlayer(redArrow, 1)
 
 console.log(board);
-
