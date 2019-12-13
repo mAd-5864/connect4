@@ -11,17 +11,23 @@
 
 <body>
     <div class="container">
-        <p id="firstText">Insiram os vossos nomes</p>
+        <p id="firstText">Escolham os vossos nomes</p>
         <form action="">
         <div id="players">
-            <input type="text" name="" id="player1" class="inputs" placeholder="Jogador1" required>
-            <input type="text" name="" id="player2" class="inputs" placeholder="Jogador2" required>
+            <input type="text" name="player1" id="player1" class="inputs" placeholder="Jogador1" required>
+            <input type="text" name="player2" id="player2" class="inputs" placeholder="Jogador2" required>
         </div>
-        <input type="submit" onclick="javascript:window.location.href='multiplayer.html'" id="btnStart"></input>
+        <input type="submit" id="btnStart" value="Começar"></input>
     </form>
     </div>
     <script>
-
+        document.querySelector("#btnStart").addEventListener("click", abc)
+function abc(event) {
+    event.preventDefault()
+    if (document.getElementsByTagName("form")[0].checkValidity()) {
+        window.location.href='multiplayer.html' 
+    }  
+}
     </script>
 </body>
 

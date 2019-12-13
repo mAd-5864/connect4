@@ -32,7 +32,7 @@ body {
 }
 
 #firstText {
-   border: 1px solid black;
+   border-bottom: solid 1px #000;
     padding: 30px;
     font-size: 25px;
 }
