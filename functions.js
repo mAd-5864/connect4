@@ -165,5 +165,6 @@ function changeTurn() {
   }
   turn = !turn
 }
+arrowPlayer(redArrow, 1)
 
 console.log(board);
