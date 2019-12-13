@@ -1,22 +1,32 @@
 // board constructor
-const boardLenght = 6
+const boardLength = 6
 const board = []
+
+document.querySelector('.border').style.width = `${110*boardLength}px`
+boardConstructor = document.querySelector("#boardConstructor")
+for (let r = 0; r < boardLength; r++) {
+  boardConstructor.innerHTML += `<tr id="row${r}"></tr>`
+  for (let c = 0; c < boardLength; c++) {
+    row = document.querySelector(`#row${r}`)
+    row.innerHTML += `<td><button type="button" id="slot${r}${c}" class="btn"></button></td>`
+  }
+}
+divArrows = document.querySelector("#arrows")
+for (let i = 0; i < boardLength; i++) {
+  divArrows.innerHTML += `<button id="arrow${i}"><img src="./logos/arrow-down-red.png"></img></button>`    
+}
+
 function resetBoard() {
-  for (let k = 0; k < boardLenght; k++) {
-    board[k] = new Array(boardLenght).fill(0)
+  for (let k = 0; k < boardLength; k++) {
+    board[k] = new Array(boardLength).fill(0)
   }
-  for (let i = 0; i < boardLenght; i++) {
-    for (let j = 0; j < boardLenght; j++) {
+  for (let i = 0; i < boardLength; i++) {
+    for (let j = 0; j < boardLength; j++) {
       document.querySelector(`#slot${i}${j}`).className = ''
-      
     }
-    
   }
-  //const table = document.getElementById('boardConstructor').innerHTML
 }
 resetBoard()
-
-
 
 // rotate board function
 let ang = 0
@@ -47,7 +57,7 @@ function chanceRotate() {
 
 // function to drop the piece trough the column
 function dropPiece(column, color) { //column => Número da coluna // color => red = 1 yellow = 2
-  for (let i = boardLenght - 1; i >= 0; i--) {
+  for (let i = boardLength - 1; i >= 0; i--) {
     if (board[i][column] === 0) {
       console.log(`coluna: ${column}`);
       board[i][column] = color;
@@ -64,8 +74,8 @@ function dropPiece(column, color) { //column => Número da coluna // color => re
 
 //function to check if anyone wins
 function winCheck() {
-  for (let x = 0; x < boardLenght; x++) {
-    for (let y = 0; y < boardLenght; y++) {
+  for (let x = 0; x < boardLength; x++) {
+    for (let y = 0; y < boardLength; y++) {
       if (x < 3 && board[y][x] != 0 && board[y][x + 1] == board[y][x]) {
         if (board[y][x + 2] == board[y][x]) {
           if (board[y][x + 3] == board[y][x]) {
@@ -132,7 +142,7 @@ let redArrow = '<img src="./logos/arrow-down-red.png"></img>';
 let yellowArrow = '<img src="./logos/arrow-down-yellow.png"></img>';
 
 function arrowPlayer(color, value) {
-  for (let i = 0; i < boardLenght; i++) {
+  for (let i = 0; i < boardLength; i++) {
     arrow = document.querySelector(`#arrow${i}`)
     arrow.innerHTML = color
     arrow.onclick = function () {
@@ -145,7 +155,6 @@ function arrowPlayer(color, value) {
   }
 }
 
-
 //switch turn btween the players
 let turn
 function changeTurn() {
@@ -156,6 +165,5 @@ function changeTurn() {
   }
   turn = !turn
 }
-arrowPlayer(redArrow, 1)
 
 console.log(board);

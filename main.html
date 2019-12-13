@@ -10,71 +10,20 @@
 </head>
 
 <body>
-  <div class="arrows" id="arrows">
-    <button id="arrow0"><img src="./logos/arrow-down-red.png"></button>
-    <button id="arrow1"><img src="./logos/arrow-down-red.png"></button>
-    <button id="arrow2"><img src="./logos/arrow-down-red.png"></button>
-    <button id="arrow3"><img src="./logos/arrow-down-yellow.png"></button>
-    <button id="arrow4"><img src="./logos/arrow-down-red.png"></button>
-    <button id="arrow5"><img src="./logos/arrow-down-yellow.png"></button>
-  </div>
-  <div class="border">
-    <table id="board" class="board">
-      <tbody id="boardConstructor">
-        <tr>
-          <td><button type="button" id="slot00" class="btn"></button></td>
-          <td><button type="button" id="slot01" class="btn"></button></td>
-          <td><button type="button" id="slot02" class="btn"></button></td>
-          <td><button type="button" id="slot03" class="btn"></button></td>
-          <td><button type="button" id="slot04" class="btn"></button></td>
-          <td><button type="button" id="slot05" class="btn"></button></td>
-        </tr>
-        <tr>
-          <td><button type="button" id="slot10" class="btn"></button></td>
-          <td><button type="button" id="slot11" class="btn"></button></td>
-          <td><button type="button" id="slot12" class="btn"></button></td>
-          <td><button type="button" id="slot13" class="btn"></button></td>
-          <td><button type="button" id="slot14" class="btn"></button></td>
-          <td><button type="button" id="slot15" class="btn"></button></td>
-        </tr>
-        <tr>
-          <td><button type="button" id="slot20" class="btn"></button></td>
-          <td><button type="button" id="slot21" class="btn"></button></td>
-          <td><button type="button" id="slot22" class="btn"></button></td>
-          <td><button type="button" id="slot23" class="btn"></button></td>
-          <td><button type="button" id="slot24" class="btn"></button></td>
-          <td><button type="button" id="slot25" class="btn"></button></td>
-        </tr>
-        <tr>
-          <td><button type="button" id="slot30" class="btn"></button></td>
-          <td><button type="button" id="slot31" class="btn"></button></td>
-          <td><button type="button" id="slot32" class="btn"></button></td>
-          <td><button type="button" id="slot33" class="btn"></button></td>
-          <td><button type="button" id="slot34" class="btn"></button></td>
-          <td><button type="button" id="slot35" class="btn"></button></td>
-        </tr>
-        <tr>
-          <td><button type="button" id="slot40" class="btn"></button></td>
-          <td><button type="button" id="slot41" class="btn"></button></td>
-          <td><button type="button" id="slot42" class="btn"></button></td>
-          <td><button type="button" id="slot43" class="btn"></button></td>
-          <td><button type="button" id="slot44" class="btn"></button></td>
-          <td><button type="button" id="slot45" class="btn"></button></td>
-        </tr>
-        <tr>
-          <td><button type="button" id="slot50" class="btn"></button></td>
-          <td><button type="button" id="slot51" class="btn"></button></td>
-          <td><button type="button" id="slot52" class="btn"></button></td>
-          <td><button type="button" id="slot53" class="btn"></button></td>
-          <td><button type="button" id="slot54" class="btn"></button></td>
-          <td><button type="button" id="slot55" class="btn"></button></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="rotate"><button id="rotate" type="button" onclick="chanceRotate()">ROTATE</button></div>
+  <div id="align">
+    <div class="arrows" id="arrows">
 
-<!--   <script src="board.js"></script> -->
+    </div>
+    <div class="border">
+      <table id="board" class="board">
+        <tbody id="boardConstructor">
+
+        </tbody>
+      </table>
+    </div>
+    <div class="rotate"><button id="rotate" type="button" onclick="chanceRotate()">ROTATE</button></div>
+  </div>
+  <!--   <script src="board.js"></script> -->
   <script src="functions.js"></script>
 </body>
 
