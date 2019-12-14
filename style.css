@@ -6,6 +6,25 @@ body {
 body p{
   color: #fff;
 }
+#backBtn{
+  position: fixed;
+  margin-left: -50%;
+  margin-top: 0px;
+  background: none;
+  border: none;
+}
+#backBtn img{
+  border: 3px solid #000;
+  border-radius: 10px;
+  height: 15px;
+  width: 60px;
+}
+#backBtn img:hover{
+  border: 3px solid #ad0505;
+}
+#backBtn:focus{
+  outline: 0;
+}
 .border{
   border: 3px solid #fff;
   width: 660px;
