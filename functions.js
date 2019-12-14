@@ -70,7 +70,7 @@ function dropPiece(column, color) { //column => Número da coluna // color => re
       }
     }*/
     if (board[i][column] === 0) {
-      console.log(`coluna: ${column}`);
+      //console.log(`coluna: ${column}`);
       board[i][column] = color;
       if (board[i][column] === 1) {
         document.querySelector(`#slot${i}${column}`).className = 'red'
@@ -161,7 +161,7 @@ function arrowPlayer(color, value) {
       dropPiece(i, value);
       setTimeout(function(){winCheck()}, 500)
       changeTurn(550);
-      }
+      } else {window.alert('Coluna cheia!')}
     }
   }
 }
