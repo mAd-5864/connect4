@@ -57,13 +57,14 @@ function chanceRotate() {
 
 // function to drop the piece trough the column
 function dropPiece(column, color) { //column => Número da coluna // color => red = 1 yellow = 2
+   if (board[0][column] !== 0) {
+    if (color = 2) {
+      console.log(`Está ocupada por ${board[0][column]}`);
+      arrowCPU(yellowArrow, 2);
+    }
+  } else { 
   for (let i = boardLength - 1; i >= 0; i--) {
-    /*if (board[0][column] !== 0) {
-      if (turn = !turn) {
-        console.log(`Está cheia ${board[0][column]}`);
-        arrowCPU(yellowArrow, 2)
-      }
-    }*/
+  
     if (board[i][column] === 0) {
       console.log(`coluna: ${column}`);
       board[i][column] = color;
@@ -76,7 +77,7 @@ function dropPiece(column, color) { //column => Número da coluna // color => re
       break
     }
   }
-}
+}}
 
 //function to check if anyone wins
 function winCheck() {
@@ -163,14 +164,7 @@ function arrowPlayer(color, value) {
 
 //switch turn between the players
 let turn
-function changeTurn() {
-  if (turn) {
-    arrowPlayer(redArrow, 1);
-  } else {
-    arrowPlayer(yellowArrow, 2);
-  }
-  turn = !turn
-}
+
 arrowPlayer(redArrow, 1)
 
 console.log(board);
