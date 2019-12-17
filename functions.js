@@ -1,5 +1,5 @@
 // board constructor
-const boardLength = 7
+const boardLength = 12
 const board = []
 
 function createBoard() {
@@ -11,7 +11,7 @@ function createBoard() {
     boardConstructor.innerHTML += `<tr id="row${r}"></tr>`
     for (let c = 0; c < boardLength; c++) {
       row = document.querySelector(`#row${r}`)
-      row.innerHTML += `<td><button type="button" id="slot${r}${c}" class="btn"></button></td>`
+      row.innerHTML += `<td><button type="button" id="slot-${r}-${c}" class="btn"></button></td>`
     }
   }
   divArrows = document.querySelector("#arrows")
@@ -27,7 +27,7 @@ function resetBoard() {
   }
   for (let i = 0; i < boardLength; i++) {
     for (let j = 0; j < boardLength; j++) {
-      document.querySelector(`#slot${i}${j}`).className = ''
+      document.querySelector(`#slot-${i}-${j}`).className = ''
     }
   }
 }
@@ -73,10 +73,10 @@ function dropPiece(column, color) { //column => Número da coluna // color => re
       //console.log(`coluna: ${column}`);
       board[i][column] = color;
       if (board[i][column] === 1) {
-        document.querySelector(`#slot${i}${column}`).className = 'red'
+        document.querySelector(`#slot-${i}-${column}`).className = 'red'
       }
       if (board[i][column] === 2) {
-        document.querySelector(`#slot${i}${column}`).className = 'yellow'
+        document.querySelector(`#slot-${i}-${column}`).className = 'yellow'
       } 
       break
     }
@@ -160,7 +160,7 @@ function arrowPlayer(color, value) {
       if (board[0][i]===0) {
       dropPiece(i, value);
       setTimeout(function(){winCheck()}, 500)
-      changeTurn(550);
+      setTimeout(function() {changeTurn()}, 100)
       } else {window.alert('Coluna cheia!')}
     }
   }
