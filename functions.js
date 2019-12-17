@@ -1,6 +1,7 @@
 // board constructor
 const boardLength = 6
 const board = []
+let count = 0
 
 function createBoard() {
   
@@ -82,7 +83,9 @@ function dropPiece(column, color) { //column => Número da coluna // color => re
       break
     }
   }
-}}
+}
+count = count + 1
+}
 
 //function to check if anyone wins
 function winCheck() {
@@ -160,11 +163,15 @@ function arrowPlayer(color, value) {
     arrow.onclick = function () {
       if (board[0][i]===0) {
       dropPiece(i, value);
-      setTimeout(function(){winCheck()}, 500)
-      setTimeout(function() {changeTurn()}, 100)
+      // setTimeout(function(){winCheck()}, 500)
+      setTimeout(function() {changeTurn()}, 0)
       } else {window.alert('Coluna cheia!')}
     }
   }
+if (count == boardLength*boardLength) {
+  alert("Empate!")
+  setTimeout(function() {resetBoard()}, 300)
+}  
 }
 
 //switch turn between the players

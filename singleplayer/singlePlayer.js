@@ -13,6 +13,7 @@ function arrowCPU(value) {
     setTimeout(function () {
       changeTurn()
     }, 1250)
+    count = count + 1
   }
 
   function randomNumber() {
