@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
-        <link rel="stylesheet" href="../style.css">
-    </head>
-    <body>
-            <p>pagina para modo singleplayer</p>
-    
 
-            <script src="singlePlayer.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>4 em Linha</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    
+  <div id="align">
+    <div class="arrows" id="arrows">
+
+    </div>
+    <div class="border">
+      <table id="board" class="board">
+        <tbody id="boardConstructor">
+
+        </tbody>
+      </table>
+    </div>
+    <div class="rotate"><button id="rotate" type="button" onclick="chanceRotate()">ROTATE</button></div>
+  </div>
+  <script src="../functions.js"></script>
+  <script src="singlePlayer.js"></script>
 </body>
+
 </html>
