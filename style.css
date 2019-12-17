@@ -7,16 +7,34 @@ body {
 body p {
   color: #fff;
 }
-
-.border {
+#backBtn{
+  position: fixed;
+  margin-left: -50%;
+  margin-top: 0px;
+  background: none;
+  border: none;
+}
+#backBtn img{
   border: 3px solid #000;
+  border-radius: 10px;
+  height: 15px;
+  width: 60px;
+}
+#backBtn img:hover{
+  border: 3px solid #ad0505;
+}
+#backBtn:focus{
+  outline: 0;
+}
+.border{
+  border: 3px solid #fff;
   width: 660px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background: #5D2D80;
-  background: linear-gradient(to bottom, #F2C53D 0%, #FFF125 100%);
+  background: #014040;
+  background: linear-gradient(to bottom, #027373 0% ,#014040 100%);
   margin: 0 auto;
   margin-top: 5px;
   border-radius: 50px;

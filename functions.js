@@ -1,20 +1,25 @@
 // board constructor
-const boardLength = 6
+const boardLength = 7
 const board = []
 
-document.querySelector('.border').style.width = `${110*boardLength}px`
-boardConstructor = document.querySelector("#boardConstructor")
-for (let r = 0; r < boardLength; r++) {
-  boardConstructor.innerHTML += `<tr id="row${r}"></tr>`
-  for (let c = 0; c < boardLength; c++) {
-    row = document.querySelector(`#row${r}`)
-    row.innerHTML += `<td><button type="button" id="slot${r}${c}" class="btn"></button></td>`
+function createBoard() {
+  
+  document.querySelector('.border').style.width = `${110*boardLength}px`
+  document.querySelector('.border').style.height = `${110*boardLength}px`
+  boardConstructor = document.querySelector("#boardConstructor")
+  for (let r = 0; r < boardLength; r++) {
+    boardConstructor.innerHTML += `<tr id="row${r}"></tr>`
+    for (let c = 0; c < boardLength; c++) {
+      row = document.querySelector(`#row${r}`)
+      row.innerHTML += `<td><button type="button" id="slot${r}${c}" class="btn"></button></td>`
+    }
+  }
+  divArrows = document.querySelector("#arrows")
+  for (let i = 0; i < boardLength; i++) {
+    divArrows.innerHTML += `<button id="arrow${i}"><img src="../logos/arrow-down-red.png"></img></button>`    
   }
 }
-divArrows = document.querySelector("#arrows")
-for (let i = 0; i < boardLength; i++) {
-  divArrows.innerHTML += `<button id="arrow${i}"><img src="../logos/arrow-down-red.png"></img></button>`    
-}
+createBoard()
 
 function resetBoard() {
   for (let k = 0; k < boardLength; k++) {
@@ -66,7 +71,7 @@ function dropPiece(column, color) { //column => Número da coluna // color => re
   for (let i = boardLength - 1; i >= 0; i--) {
   
     if (board[i][column] === 0) {
-      console.log(`coluna: ${column}`);
+      //console.log(`coluna: ${column}`);
       board[i][column] = color;
       if (board[i][column] === 1) {
         document.querySelector(`#slot${i}${column}`).className = 'red'
@@ -157,7 +162,7 @@ function arrowPlayer(color, value) {
       dropPiece(i, value);
       setTimeout(function(){winCheck()}, 500)
       changeTurn(550);
-      }
+      } else {window.alert('Coluna cheia!')}
     }
   }
 }
