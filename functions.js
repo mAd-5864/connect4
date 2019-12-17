@@ -1,5 +1,5 @@
 // board constructor
-const boardLength = 12
+const boardLength = 6
 const board = []
 
 function createBoard() {
@@ -63,9 +63,9 @@ function chanceRotate() {
 // function to drop the piece trough the column
 function dropPiece(column, color) { //column => Número da coluna // color => red = 1 yellow = 2
    if (board[0][column] !== 0) {
-    if (color = 2) {
+    if (color === 2) {
       console.log(`Está ocupada por ${board[0][column]}`);
-      arrowCPU(yellowArrow, 2);
+      arrowCPU(2);
     }
   } else { 
   for (let i = boardLength - 1; i >= 0; i--) {
