@@ -11,7 +11,21 @@
         <button id="backBtn" onclick="javascript:history.go(-1)"><img src="../logos/back.png" alt="Página Anterior"></button>
         <p>pagina para modo singleplayer</p>
     
+  <div id="align">
+    <div class="arrows" id="arrows">
 
-        <script src="singlePlayer.js"></script>
+    </div>
+    <div class="border">
+      <table id="board" class="board">
+        <tbody id="boardConstructor">
+
+        </tbody>
+      </table>
+    </div>
+    <div class="rotate"><button id="rotate" type="button" onclick="chanceRotate()">ROTATE</button></div>
+  </div>
+  <script src="../functions.js"></script>
+  <script src="singlePlayer.js"></script>
 </body>
+
 </html>

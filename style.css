@@ -3,7 +3,8 @@ body {
   text-align: center;
   font-family: 'Bungee', cursive;
 }
-body p{
+
+body p {
   color: #fff;
 }
 #backBtn{
@@ -36,9 +37,10 @@ body p{
   background: linear-gradient(to bottom, #027373 0% ,#014040 100%);
   margin: 0 auto;
   margin-top: 5px;
-
+  border-radius: 50px;
 }
-.arrows{
+
+.arrows {
   padding: 0px 25px;
   width: 640px;
   height: 80px;
@@ -46,6 +48,7 @@ body p{
   justify-content: center;
   margin: 0 auto;
 }
+
 .arrows button {
   all: inherit;
   display: block;
@@ -54,17 +57,20 @@ body p{
   border-radius: 50%;
   background: none;
 }
+
 .arrows img {
   width: 60px;
   height: 60px;
 }
-.arrows img:hover{
+
+.arrows img:hover {
   filter: brightness(200%);
   border: 3px #fff solid;
   border-radius: 50%;
   width: 54px;
   height: 54px;
 }
+
 .board button {
   display: block;
   width: 100px;
@@ -72,26 +78,31 @@ body p{
   border-radius: 50%;
   border: 0;
   margin: 1px 3px;
-  background: #ccc;
+  background: #000;
 }
+
 .board button:hover {
   filter: brightness(65%);
   border: 3px #444 solid;
 }
+
 .board button:focus {
   outline: 0;
 }
+
 .board button.red {
   background: #ad0505;
-  background: linear-gradient(to bottom, #ff1616 0%,#ad0505 100%);
+  background: linear-gradient(to bottom, #ff1616 0%, #ad0505 100%);
 }
+
 .board button.yellow {
   background: #F2C53D;
-  background: linear-gradient(to bottom, #FFF125 0%,#F2C53D 100%);
+  background: linear-gradient(to bottom, #067302 0%, #078C03 100%);
 }
-#rotate{
+
+#rotate {
   background: #FF930D;
-  background: linear-gradient(to bottom, #FFB50D 0%,#FF930D 100%);
+  background: linear-gradient(to bottom, #FFB50D 0%, #FF930D 100%);
   display: block;
   margin: auto;
   padding: 20px;
@@ -102,6 +113,36 @@ body p{
   border-bottom-right-radius: 20px;
   border-top: none;
 }
-.rotate button:hover{
+
+.rotate button:hover {
   outline: 0;
+}
+
+#hub {
+  background: #000;
+  color: #fff;
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  border: solid 1px #fff;
+  border-radius: 50px;
+  margin: 200px 1075px;
+}
+
+#textTime {
+   font-size: 25px;
+}
+
+#playerTurn {
+  font-size: 20px;
+}
+
+#btnQuit {
+  background: #000;
+  color: #fff;
+  position: absolute;
+  padding: 25px;
+  border: solid 1px #fff;
+  border-radius: 50px;
+  margin: 550px 460px;
 }

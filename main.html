@@ -10,9 +10,10 @@
 </head>
 
 <body>
+  
   <div id="align">
+    <div id="hub"><p id="textTime">Tempo</p> <hr> <p id="playerTurn">Jogador1</p></div>
     <div class="arrows" id="arrows">
-
     </div>
     <div class="border">
       <table id="board" class="board">
@@ -24,31 +25,8 @@
     <div class="rotate"><button id="rotate" type="button" onclick="chanceRotate()">ROTATE</button></div>
   </div>
   <script src="functions.js"></script>
-  <script>
-    function arrowCPU(color, value) {
-      for (let i = 0; i < board.length; i++) {
-        arrow = document.querySelector(`#arrow${i}`)
-        arrow.innerHTML = color
-      }
-      randomNumber()
-      console.log(i);
-      
-      setTimeout(function () {
-        dropPiece(i, value)
-      }, 500)
-      setTimeout(function () {
-        winCheck()
-      }, 1000)
-      setTimeout(function () {
-        changeTurn()
-      }, 1250)
-    }
-
-    function randomNumber() {
-      i = Math.random() * boardLength - 1
-      i = Math.ceil(i);
-    }
-  </script>
+  <script src="../multiplayer/multiplayer.js"></script>
+ 
 </body>
 
 </html>
