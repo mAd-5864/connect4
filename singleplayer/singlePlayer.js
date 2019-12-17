@@ -1,10 +1,6 @@
 let number = 0
 
-function arrowCPU(color, value) {
-    for (let i = 0; i < board.length; i++) {
-      arrow = document.querySelector(`#arrow${i}`)
-      arrow.innerHTML = color
-    }
+function arrowCPU(value) {
     randomNumber()
     console.log("i:" + number);
     
@@ -17,6 +13,7 @@ function arrowCPU(color, value) {
     setTimeout(function () {
       changeTurn()
     }, 1250)
+    count = count + 1
   }
 
   function randomNumber() {
@@ -28,7 +25,7 @@ function changeTurn() {
     if (turn) {
       arrowPlayer(redArrow, 1);
     } else {
-      arrowCPU(yellowArrow, 2);
+      arrowCPU(2);
     }
     turn = !turn
   }
