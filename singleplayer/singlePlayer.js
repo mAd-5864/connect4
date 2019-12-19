@@ -23,8 +23,10 @@ function arrowCPU(value) {
 
 function changeTurn() {
     if (turn) {
+      winCheck();
       arrowPlayer(redArrow, 1);
     } else {
+      winCheck();
       arrowCPU(2);
     }
     turn = !turn
