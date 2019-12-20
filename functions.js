@@ -63,12 +63,12 @@ function chanceRotate() {
 
 // function to drop the piece trough the column
 function dropPiece(column, color) { //column => Número da coluna // color => red = 1 yellow = 2
-  if (board[0][column] !== 0) {
+/*   if (board[0][column] !== 0) {
     if (color === 2) {
       console.log(`Está ocupada por ${board[0][column]}`);
       arrowCPU(2);
     }
-  } else {
+  } else { */
     for (let i = boardLength - 1; i >= 0; i--) {
 
       if (board[i][column] === 0) {
@@ -81,7 +81,7 @@ function dropPiece(column, color) { //column => Número da coluna // color => re
           document.querySelector(`#slot-${i}-${column}`).className = 'yellow'
         }
         break
-      }
+      
     }
   }
   count = count + 1
@@ -135,7 +135,9 @@ let yellowArrow = '<img src="../logos/arrow-down-yellow.png"></img>';
 function arrowPlayer(color, value) {
   for (let i = 0; i < boardLength; i++) {
     arrow = document.querySelector(`#arrow${i}`)
+    arrow.disabled = false
     arrow.innerHTML = color
+    console.log(arrow)
     arrow.onclick = function () {
       if (board[0][i] === 0) {
         dropPiece(i, value);

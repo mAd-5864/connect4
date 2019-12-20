@@ -56,7 +56,13 @@ body p {
   height: 60px;
   border-radius: 50%;
   background: none;
+  cursor: pointer;
 }
+
+.arrows button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+} 
 
 .arrows img {
   width: 60px;
