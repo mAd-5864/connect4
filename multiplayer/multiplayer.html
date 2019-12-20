@@ -11,7 +11,11 @@
 
 <body>
   <div id="alignHUB">
-  <section id="hub"><p id="textTime">Tempo</p> <hr> <p id="playerTurn">Jogador1</p></section>
+  <button disabled id="hub">
+    <p id="textTime">Tempo</p><hr> 
+    <p id="playerTurn">Jogador1</p>
+    <p id="playerTurn">Jogador2</p>
+  </button>
   <button id="btnQuit">Desistir</button>
 </div>
   <button id="backBtn" onclick="javascript:history.go(-1)"><img src="../logos/back.png" alt="Página Anterior"></button>
@@ -26,7 +30,6 @@
         </tbody>
       </table>
     </div>
-    <div class="rotate"><button id="rotate" type="button" onclick="chanceRotate()">ROTATE</button></div>
   </div>
   <script src="../functions.js"></script>
   <script src="multiplayer.js"></script>

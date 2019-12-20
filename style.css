@@ -61,7 +61,7 @@ body p {
 
 .arrows button:disabled {
   opacity: 0.4;
-  cursor: not-allowed;
+  cursor: not-allowed;  
 } 
 
 .arrows img {
@@ -132,7 +132,7 @@ body p {
   height: 300px;
   border: solid 1px #fff;
   border-radius: 50px;
-  margin: 200px 1075px;
+  margin: 200px 0 0 400px ;
 }
 
 #textTime {
@@ -150,5 +150,5 @@ body p {
   padding: 25px;
   border: solid 1px #fff;
   border-radius: 50px;
-  margin: 550px 460px;
+  margin: 550px 0 0 450px;
 }

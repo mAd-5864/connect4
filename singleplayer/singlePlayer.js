@@ -11,11 +11,12 @@ function arrowCPU(value) {
     console.log(`Está ocupada por ${board[0][number]}`);
     arrowCPU(value)
   }else { 
-    dropPiece(number, value)
     setTimeout(function () {
-      
+      dropPiece(number, value)
+    }, 1000)
+    setTimeout(function () {
       changeTurn()
-    }, 1250)
+    }, 1000)
     count = count + 1
   }
 }
@@ -27,10 +28,10 @@ function randomNumber() {
 
 function changeTurn() {
   if (turn) {
-    //winCheck();
+    winCheck();
     arrowPlayer(redArrow, 1);
   } else {
-   // winCheck();
+    winCheck();
     arrowCPU(2);
   }
   turn = !turn

@@ -91,16 +91,16 @@ function dropPiece(column, color) { //column => Número da coluna // color => re
 function winCheck() {
   for (let x = 0; x < boardLength; x++) {
     for (let y = 0; y < boardLength; y++) {
-      if (x < 3 && board[y][x] != 0 && board[y][x + 1] == board[y][x]) {
+      if (x < boardLength-3 && board[y][x] != 0 && board[y][x + 1] == board[y][x]) {
         check4(x, y, 0, 2, 0, 3);
       }
-      if (y < 3 && board[y][x] != 0 && board[y + 1][x] == board[y][x]) {
+      if (y < boardLength-3 && board[y][x] != 0 && board[y + 1][x] == board[y][x]) {
         check4(x, y, 2, 0, 3, 0);
       }
-      if (x < 3 && y < 3 && board[y][x] != 0 && board[y + 1][x + 1] == board[y][x]) {
+      if (x < boardLength-3 && y < boardLength-3 && board[y][x] != 0 && board[y + 1][x + 1] == board[y][x]) {
         check4(x, y, 2, 2, 3, 3);
       }
-      if (x < 3 && y > 3 && board[y][x] != 0 && board[y - 1][x + 1] == board[y][x]) {
+      if (x < boardLength-3 && y > 2 && board[y][x] != 0 && board[y - 1][x + 1] == board[y][x]) {
         check4(x, y, -2, 2, -3, 3);
       }
     }
