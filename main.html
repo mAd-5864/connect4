@@ -10,23 +10,47 @@
 </head>
 
 <body>
-  
-  <div id="align">
-    <div id="hub"><p id="textTime">Tempo</p> <hr> <p id="playerTurn">Jogador1</p></div>
-    <div class="arrows" id="arrows">
-    </div>
-    <div class="border">
-      <table id="board" class="board">
-        <tbody id="boardConstructor">
 
-        </tbody>
-      </table>
+  <div id="align">
+    <div id="hub">
+      <p id="textTime">Tempo</p>
+      <hr>
+      <p id="timer"></p>
     </div>
-    <div class="rotate"><button id="rotate" type="button" onclick="chanceRotate()">ROTATE</button></div>
-  </div>
-  <script src="functions.js"></script>
-  <script src="../multiplayer/multiplayer.js"></script>
- 
+
+    <script src="functions.js"></script>
+    <script src="../multiplayer/multiplayer.js"></script>
+
+    <script type="text/javascript">
+      function startTimer(duration, display) {
+        let timer = duration, seconds;
+        setInterval(function () {
+          minutes = parseInt(timer / 60, 10);
+          seconds = parseInt(timer % 60, 10);
+
+          minutes = minutes < 10 ? "0" + minutes : minutes;
+          seconds = seconds < 10 ? "0" + seconds : seconds;
+
+          display.textContent = seconds + "s";
+
+          if (--timer < 0) {
+            timer = duration;
+          }
+          
+          if (seconds <= 5) {
+            display.style.color = "red"
+          } else {
+            display.style.color = '#fff'
+          }
+        }, 1000);
+      }
+
+      window.onload = function () {
+        let playTime = 24,
+          display = document.querySelector('#timer');
+        startTimer(playTime, display);
+      };
+    </script>
 </body>
 
 </html>

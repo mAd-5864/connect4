@@ -10,14 +10,22 @@
 </head>
 
 <body>
+  <div id="dialogoverlay"></div>
+  <div id="dialogbox">
+    <div>
+      <div id="dialogboxhead"></div>
+      <div id="dialogboxbody"></div>
+      <div id="dialogboxfoot"></div>
+    </div>
+  </div>
+
   <div id="alignHUB">
-  <button disabled id="hub">
-    <p id="textTime">Tempo</p><hr> 
-    <p id="playerTurn">Jogador1</p>
-    <p id="playerTurn">Jogador2</p>
-  </button>
-  <button id="btnQuit">Desistir</button>
-</div>
+    <button disabled id="hub">
+      <p id="textTime">Tempo</p>
+      <hr>
+      <p id="timer"></p>
+    </button>
+  </div>
   <button id="backBtn" onclick="javascript:history.go(-1)"><img src="../logos/back.png" alt="Página Anterior"></button>
   <div id="align">
     <div class="arrows" id="arrows">
@@ -31,6 +39,11 @@
       </table>
     </div>
   </div>
+
+
+  <script type="text/javascript">
+
+  </script>
   <script src="../functions.js"></script>
   <script src="multiplayer.js"></script>
 </body>

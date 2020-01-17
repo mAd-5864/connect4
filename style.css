@@ -139,8 +139,9 @@ body p {
    font-size: 25px;
 }
 
-#playerTurn {
+#timer {
   font-size: 20px;
+  color: #fff;
 }
 
 #btnQuit {
@@ -152,3 +153,25 @@ body p {
   border-radius: 50px;
   margin: 550px 0 0 450px;
 }
+#dialogoverlay{
+	display: none;
+	opacity: .8;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background: #fff;
+	width: 100%;
+	z-index: 10;
+}
+#dialogbox{
+	display: none;
+	position: fixed;
+	background: #000;
+	border-radius:7px; 
+	width:550px;
+	z-index: 10;
+}
+#dialogbox > div{ background:#FFF; margin:8px; }
+#dialogbox > div > #dialogboxhead{ background: #666; font-size:19px; padding:10px; color:#ccc; }
+#dialogbox > div > #dialogboxbody{ background:#333; padding:20px; color:#fff; }
+#dialogbox > div > #dialogboxfoot{ background: #666; padding:10px; text-align:center; }
