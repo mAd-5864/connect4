@@ -137,7 +137,7 @@ function arrowPlayer(color, value) {
     arrow = document.querySelector(`#arrow${i}`)
     arrow.disabled = false
     arrow.innerHTML = color
-    console.log(arrow)
+    // console.log(arrow)
     arrow.onclick = function () {
       if (board[0][i] === 0) {
         dropPiece(i, value);
