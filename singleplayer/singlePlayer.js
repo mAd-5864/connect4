@@ -23,6 +23,10 @@ function arrowCPU(value) {
 }
 
 function arrowCPUMedium(value) {
+  for (let i = 0; i < boardLength; i++) {
+    arrow = document.querySelector(`#arrow${i}`)
+    arrow.disabled = true
+  }
   CPUMediumNumber()
   console.log(numberM);
   setTimeout(function () {
