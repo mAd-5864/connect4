@@ -58,9 +58,7 @@ function customAlert(button) {
 
   }
 }
-let alert = new customAlert();
-    turn = !turn
-  }
+
 function saveData() {
 names = JSON.parse(sessionStorage.getItem("nome"))
 
