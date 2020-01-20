@@ -50,29 +50,51 @@ function rotateElemL() {
 function chanceRotate() {
   let chance = Math.random() * 10;
   if (chance > 9.35) {
-    rotateElemR()
+    rotateMatrixRight(board)
     console.log("Rodou Direita");
   } else if (chance < 0.35) {
-    rotateElemL()
+    rotateMatrixLeft(board)
     console.log("Rodou Esquerda");
   } else {
     console.log("Não rodou");
   }
 
 }
+function rotateMatrixRight(matrix) {
+  const n = matrix.length;
+  const x = Math.floor(n/ 2);
+  const y = n - 1;
+  for (let i = 0; i < x; i++) {
+     for (let j = i; j < y - i; j++) {
+        k = matrix[i][j];
+        matrix[i][j] = matrix[y - j][i];
+        matrix[y - j][i] = matrix[y - i][y - j];
+        matrix[y - i][y - j] = matrix[j][y - i]
+        matrix[j][y - i] = k
+     }
+  }
+}
+function rotateMatrixLeft(matrix) {
+  const n = matrix.length;
+  const x = Math.floor(n/ 2);
+  const y = n - 1;
+  for (let i = 0; i < x; i++) {
+     for (let j = i; j < y - i; j++) {
+        k = matrix[i][j];
+        matrix[i][j] = matrix[y + j][i];
+        matrix[y + j][i] = matrix[y + i][y + j];
+        matrix[y + i][y + j] = matrix[j][y + i]
+        matrix[j][y + i] = k
+     }
+  }
+}
+
+
 
 // function to drop the piece trough the column
 function dropPiece(column, color) { //column => Número da coluna // color => red = 1 yellow = 2
-/*   if (board[0][column] !== 0) {
-    if (color === 2) {
-      console.log(`Está ocupada por ${board[0][column]}`);
-      arrowCPU(2);
-    }
-  } else { */
     for (let i = boardLength - 1; i >= 0; i--) {
-
       if (board[i][column] === 0) {
-        //console.log(`coluna: ${column}`);
         board[i][column] = color;
         if (board[i][column] === 1) {
           document.querySelector(`#slot-${i}-${column}`).className = 'red'
@@ -81,7 +103,6 @@ function dropPiece(column, color) { //column => Número da coluna // color => re
           document.querySelector(`#slot-${i}-${column}`).className = 'yellow'
         }
         break
-      
     }
   }
   count = count + 1
@@ -137,7 +158,6 @@ function arrowPlayer(color, value) {
     arrow = document.querySelector(`#arrow${i}`)
     arrow.disabled = false
     arrow.innerHTML = color
-    // console.log(arrow)
     arrow.onclick = function () {
       if (board[0][i] === 0) {
         dropPiece(i, value);
