@@ -88,7 +88,3 @@ table += "</table>"
 const divTable = document.getElementById("divTable")
 divTable.innerHTML = table
 }
-
-document.getElementById("btnQuit").addEventListener("click", function() {
-  saveData()
-})
