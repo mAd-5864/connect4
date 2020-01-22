@@ -22,22 +22,7 @@
     </form>
     </div>
     <script>
-        let names = []
-        document.querySelector("#btnStart").addEventListener("click", abc)
-function abc(event) {
-    const txtPlayer1 = document.getElementById("player1").value
-        const txtPlayer2 = document.getElementById("player2").value
-        const obj1 = {player1:txtPlayer1}
-        const obj2 = {player2:txtPlayer2} 
-        names.push(obj1)
-        names.push(obj2)
-        sessionStorage.setItem("nome", JSON.stringify(names))
-    event.preventDefault()
-    if (document.getElementsByTagName("form")[0].checkValidity()) {
-         window.location.href='multiplayer.html' 
-    }  
-
-}
+        
     </script>
     <script src="2Players.js"></script>
 </body>
