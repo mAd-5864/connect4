@@ -26,83 +26,101 @@ function resetBoard() {
   for (let k = 0; k < boardLength; k++) {
     board[k] = new Array(boardLength).fill(0)
   }
-  for (let i = 0; i < boardLength; i++) {
-    for (let j = 0; j < boardLength; j++) {
-      document.querySelector(`#slot-${i}-${j}`).className = ''
-    }
-  }
+  colorBoard()
 }
 resetBoard()
 
-// rotate board function
-let ang = 0
-function rotateElemR() {
-  ang = ang + 90
-  document.querySelector('.board').style.transform
-    = `rotate(${ang}deg)`;
-}
-function rotateElemL() {
-  ang = ang - 90
-  document.querySelector('.board').style.transform
-    = `rotate(${ang}deg)`;
+function colorBoard() {
+  for (let i = 0; i < boardLength; i++) {
+    for (let j = 0; j < boardLength; j++) {
+      if (board[j][i] === 1) {
+        document.querySelector(`#slot-${j}-${i}`).className = 'red'
+      } else if (board[j][i] === 2) {
+        document.querySelector(`#slot-${j}-${i}`).className = 'yellow'
+      } else {
+        document.querySelector(`#slot-${j}-${i}`).className = ''
+      }
+    }
+  }
 }
 
+
+  
+
+// rotate board function
 function chanceRotate() {
   let chance = Math.random() * 10;
   if (chance > 9.35) {
-    rotateMatrixRight(board)
     console.log("Rodou Direita");
+    rotateMatrixRight(board)
+    dropAllPieces()
   } else if (chance < 0.35) {
-    rotateMatrixLeft(board)
     console.log("Rodou Esquerda");
+    rotateMatrixRight(board)
+    rotateMatrixRight(board)
+    rotateMatrixRight(board)
+    dropAllPieces()
   } else {
     console.log("Não rodou");
   }
-
 }
 function rotateMatrixRight(matrix) {
   const n = matrix.length;
-  const x = Math.floor(n/ 2);
+  const x = Math.floor(n / 2);
   const y = n - 1;
   for (let i = 0; i < x; i++) {
-     for (let j = i; j < y - i; j++) {
-        k = matrix[i][j];
-        matrix[i][j] = matrix[y - j][i];
-        matrix[y - j][i] = matrix[y - i][y - j];
-        matrix[y - i][y - j] = matrix[j][y - i]
-        matrix[j][y - i] = k
-     }
+    for (let j = i; j < y - i; j++) {
+      k = matrix[i][j];
+      matrix[i][j] = matrix[y - j][i];
+      matrix[y - j][i] = matrix[y - i][y - j];
+      matrix[y - i][y - j] = matrix[j][y - i]
+      matrix[j][y - i] = k
+    }
+  }
+  dropAllPieces()
+}
+function dropAllPieces() {
+  for (let x = 0; x < boardLength; x++) {
+    dropTroughColumn(x, 0)
+  }
+  colorBoard()
+}
+function dropTroughColumn(x, freeSpaces) {
+  for (let y = boardLength -1; y >= 0; y--) {
+    //console.log(`"y:"${y} "x:"${x}`);
+    console.log("freeSpaces: " + freeSpaces);
+    console.log("Y: " + y + "| X: " + x);
+    if (board[y][x] == 0 ) {
+      freeSpaces += 1
+    } else {
+      
+      console.log("-----------");
+      console.log("-----------");
+      
+      console.log("freeSpaces: " + freeSpaces);
+      console.log("Y: " + y + "| X: " + x);
+      console.log("-----------");
+      
+      board[y+freeSpaces][x] = board[y][x]
+      if (freeSpaces != 0) {
+        board[y][x] = 0
+      }
+    }
   }
 }
-function rotateMatrixLeft(matrix) {
-  const n = matrix.length;
-  const x = Math.floor(n/ 2);
-  const y = n - 1;
-  for (let i = 0; i < x; i++) {
-     for (let j = i; j < y - i; j++) {
-        k = matrix[i][j];
-        matrix[i][j] = matrix[y + j][i];
-        matrix[y + j][i] = matrix[y + i][y + j];
-        matrix[y + i][y + j] = matrix[j][y + i]
-        matrix[j][y + i] = k
-     }
-  }
-}
-
-
 
 // function to drop the piece trough the column
 function dropPiece(column, color) { //column => Número da coluna // color => red = 1 yellow = 2
-    for (let i = boardLength - 1; i >= 0; i--) {
-      if (board[i][column] === 0) {
-        board[i][column] = color;
-        if (board[i][column] === 1) {
-          document.querySelector(`#slot-${i}-${column}`).className = 'red'
-        }
-        if (board[i][column] === 2) {
-          document.querySelector(`#slot-${i}-${column}`).className = 'yellow'
-        }
-        break
+  for (let i = boardLength - 1; i >= 0; i--) {
+    if (board[i][column] === 0) {
+      board[i][column] = color;
+      if (board[i][column] === 1) {
+        document.querySelector(`#slot-${i}-${column}`).className = 'red'
+      }
+      if (board[i][column] === 2) {
+        document.querySelector(`#slot-${i}-${column}`).className = 'yellow'
+      }
+      break
     }
   }
   count = count + 1
@@ -112,16 +130,16 @@ function dropPiece(column, color) { //column => Número da coluna // color => re
 function winCheck() {
   for (let x = 0; x < boardLength; x++) {
     for (let y = 0; y < boardLength; y++) {
-      if (x < boardLength-3 && board[y][x] != 0 && board[y][x + 1] == board[y][x]) {
+      if (x < boardLength - 3 && board[y][x] != 0 && board[y][x + 1] == board[y][x]) {
         check4(x, y, 0, 2, 0, 3);
       }
-      if (y < boardLength-3 && board[y][x] != 0 && board[y + 1][x] == board[y][x]) {
+      if (y < boardLength - 3 && board[y][x] != 0 && board[y + 1][x] == board[y][x]) {
         check4(x, y, 2, 0, 3, 0);
       }
-      if (x < boardLength-3 && y < boardLength-3 && board[y][x] != 0 && board[y + 1][x + 1] == board[y][x]) {
+      if (x < boardLength - 3 && y < boardLength - 3 && board[y][x] != 0 && board[y + 1][x + 1] == board[y][x]) {
         check4(x, y, 2, 2, 3, 3);
       }
-      if (x < boardLength-3 && y > 2 && board[y][x] != 0 && board[y - 1][x + 1] == board[y][x]) {
+      if (x < boardLength - 3 && y > 2 && board[y][x] != 0 && board[y - 1][x + 1] == board[y][x]) {
         check4(x, y, -2, 2, -3, 3);
       }
     }
