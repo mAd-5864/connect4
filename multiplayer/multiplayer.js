@@ -59,10 +59,12 @@ function customAlert(button) {
   }
 }
 
+let table
+
 function saveData() {
 names = JSON.parse(sessionStorage.getItem("nome"))
 
-let table = "<table>"
+table = "<table>"
 
 for (const name of names) {
   if (name.player1) {
@@ -78,13 +80,20 @@ for (const name of names) {
      </tr>
     `
   }
-    
 }
-console.log(table);
-
-
 table += "</table>"
-
+console.log(table);
 const divTable = document.getElementById("divTable")
 divTable.innerHTML = table
+console.log(document.getElementById("divTable"));
+}
+saveData()
+
+for (const name of names) {
+  if (name.player1) {
+    document.getElementById("player1").innerHTML = name.player1
+  }
+if (name.player2) {
+  document.getElementById("player2").innerHTML = name.player2
+}
 }
