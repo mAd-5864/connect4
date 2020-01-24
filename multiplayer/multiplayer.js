@@ -1,5 +1,8 @@
 let playTime, display;
 let timerStart
+playTime = 14;
+display = document.querySelector('#timer');
+
 function changeTurn() {
   if (turn) {
     winCheck();
@@ -39,12 +42,6 @@ function startTimer(duration, display) {
     }
   }, 1000);
 }
-
-window.onload = () => {
-  playTime = 14;
-  display = document.querySelector('#timer');
-  startTimer(playTime, display);
-};
 
 function customAlert(button) {
   this.render = () => {
@@ -115,6 +112,8 @@ function setSessionStorage(event) {
   event.preventDefault()
     const txtPlayer1 = document.getElementById("player1").value
         const txtPlayer2 = document.getElementById("player2").value
+        document.getElementById("InGamePlayer1").innerHTML = txtPlayer1
+        document.getElementById("InGamePlayer2").innerHTML = txtPlayer2
         if (txtPlayer1 != "" && txtPlayer2 != "") {
               obj1 = {player:txtPlayer1, points: 0}
               obj2 = {player:txtPlayer2, points: 0} 
@@ -148,17 +147,6 @@ if (localStorage.getItem("playersNames") != null) {
         } else matchesPlayer2 = i
     } 
 
-    if (matchesPlayer1 != -1) {
-      userPoints = names[matchesPlayer1].points = userPoints + 1
-      names[matchesPlayer1].points = userPoints
-      localStorage.setItem("playersNames", JSON.stringify(names))
-    }
-    if (matchesPlayer2 != -1) {
-      userPoints = 0
-      userPoints = names[matchesPlayer2].points = userPoints + 1
-      names[matchesPlayer2].points = userPoints
-      localStorage.setItem("playersNames", JSON.stringify(names))
-    }
     if (matchesPlayer1 == -1 || matchesPlayer2 == -1) {
       if (matchesPlayer1 == -1) {
         names.push(obj1)
@@ -173,8 +161,29 @@ if (localStorage.getItem("playersNames") != null) {
 }
 
 function refreshPoints() {
-  for (let i = 0; i < JSON.parse(localStorage.getItem("playersNames")).length; i++) {
-if (obj1.player == JSON.parse(localStorage.getItem("playersNames"))[i].player) {
-  
-}}
+  names = JSON.parse(localStorage.getItem("playersNames"))
+  if (matchesPlayer1 != -1) {
+    if (player1Win == "true") {
+      userPoints = names[matchesPlayer1].points
+    names[matchesPlayer1].points = userPoints + 1
+    localStorage.setItem("playersNames", JSON.stringify(names))
+    } else {
+      userPoints = names[matchesPlayer1].points
+    names[matchesPlayer1].points = userPoints - 1
+    localStorage.setItem("playersNames", JSON.stringify(names))
+    }
+    
+  }
+  if (matchesPlayer2 != -1) {
+    if (player2Win == "true") {
+      userPoints = names[matchesPlayer2].points
+      names[matchesPlayer2].points = userPoints + 1
+      localStorage.setItem("playersNames", JSON.stringify(names))
+    } else {
+      userPoints = names[matchesPlayer2].points
+      names[matchesPlayer2].points = userPoints - 1
+      localStorage.setItem("playersNames", JSON.stringify(names))
+    }
+   
+  }
 }
