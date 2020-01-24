@@ -186,4 +186,28 @@ function refreshPoints() {
     }
    
   }
+  if (matchesPlayer1 == -1) {
+    if (player1Win == "true") {
+      userPoints = names[0].points
+    names[0].points = userPoints + 1
+    localStorage.setItem("playersNames", JSON.stringify(names))
+    } else {
+      userPoints = names[0].points
+    names[0].points = userPoints - 1
+    localStorage.setItem("playersNames", JSON.stringify(names))
+    }
+    
+  } 
+  if (matchesPlayer2 == -1) {
+    if (player2Win == "true") {
+      userPoints = names[1].points
+    names[1].points = userPoints + 1
+    localStorage.setItem("playersNames", JSON.stringify(names))
+    } else {
+      userPoints = names[1].points
+    names[1].points = userPoints - 1
+    localStorage.setItem("playersNames", JSON.stringify(names))
+    }
+    
+  } 
 }
