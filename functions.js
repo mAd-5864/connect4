@@ -87,20 +87,9 @@ function dropAllPieces() {
 }
 function dropTroughColumn(x, freeSpaces) {
   for (let y = boardLength -1; y >= 0; y--) {
-    //console.log(`"y:"${y} "x:"${x}`);
-    console.log("freeSpaces: " + freeSpaces);
-    console.log("Y: " + y + "| X: " + x);
     if (board[y][x] == 0 ) {
       freeSpaces += 1
     } else {
-      
-      console.log("-----------");
-      console.log("-----------");
-      
-      console.log("freeSpaces: " + freeSpaces);
-      console.log("Y: " + y + "| X: " + x);
-      console.log("-----------");
-      
       board[y+freeSpaces][x] = board[y][x]
       if (freeSpaces != 0) {
         board[y][x] = 0
@@ -155,14 +144,21 @@ function check4(x, y, first, second, third, forth) {
   }
 }
 
+let player1Win = ""
+let player2Win = ""
 function findWhoWon(y, x) {
   if (board[y][x] === 1) {
+    player1Win = "true"
+    player2Win = "false"
     alert('Jogador 1 Ganhou!');
     resetBoard();
   } else if (board[y][x] === 2) {
+    player1Win = "false"
+    player2Win = "true"
     alert('Jogador 2 Ganhou!');
     resetBoard();
   }
+  refreshPoints()
 }
 
 

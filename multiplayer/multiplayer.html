@@ -7,25 +7,30 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>4 em Linha</title>
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="multiplayer.css">
 </head>
 
 <body>
-  <div id="dialogoverlay"></div>
-  <div id="dialogbox">
-    <div>
-      <div id="dialogboxhead"></div>
-      <div id="dialogboxbody"></div>
-      <div id="dialogboxfoot"></div>
-    </div>
+  <div id="myModal" class="modal">
+    <div class="container">
+      <p id="firstText">Escolham os vossos nomes</p>
+      <form action="">
+      <div id="players">
+          <input type="text" name="player1" id="player1" class="inputs" placeholder="Jogador1" required>
+          <input type="text" name="player2" id="player2" class="inputs" placeholder="Jogador2" required>
+      </div>
+      <input type="submit" id="btnStart" value="Começar"></input>
+  </form>
+  </div>
   </div>
   <div id="alignHUB">
     <button disabled id="hubPlayer1">
-      <h2 id="player1">Jogador 1</h2>
+      <h2 id="InGamePlayer1">Jogador 1</h2>
     </button>
   </div>
   <div id="alignHUB">
     <button disabled id="hubPlayer2">
-      <h2 id="player2">Jogador 2</h2>
+      <h2 id="InGamePlayer2">Jogador 2</h2>
     </button>
   </div>
   <div id="alignHUB">
@@ -48,7 +53,6 @@
       </table>
     </div>
   </div>
-  <div id="divTable"></div>
   <script src="../functions.js"></script>
   <script src="multiplayer.js"></script>
 </body>
