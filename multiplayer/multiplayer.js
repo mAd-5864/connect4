@@ -96,7 +96,7 @@ if (name.player2) {
 }
 } */
 
-var modal = document.getElementById("myModal");
+let modal = document.getElementById("myModal");
 window.onload = function() {
 modal.style.display = "block";
 }
@@ -162,6 +162,7 @@ if (localStorage.getItem("playersNames") != null) {
 
 function refreshPoints() {
   names = JSON.parse(localStorage.getItem("playersNames"))
+  
   if (matchesPlayer1 != -1) {
     if (player1Win == "true") {
       userPoints = names[matchesPlayer1].points
@@ -172,7 +173,6 @@ function refreshPoints() {
     names[matchesPlayer1].points = userPoints - 1
     localStorage.setItem("playersNames", JSON.stringify(names))
     }
-    
   }
   if (matchesPlayer2 != -1) {
     if (player2Win == "true") {
@@ -184,30 +184,27 @@ function refreshPoints() {
       names[matchesPlayer2].points = userPoints - 1
       localStorage.setItem("playersNames", JSON.stringify(names))
     }
-   
   }
   if (matchesPlayer1 == -1) {
     if (player1Win == "true") {
-      userPoints = names[0].points
-    names[0].points = userPoints + 1
+      userPoints = names[names.length - 2].points
+    names[names.length - 2].points = userPoints + 1
     localStorage.setItem("playersNames", JSON.stringify(names))
     } else {
-      userPoints = names[0].points
-    names[0].points = userPoints - 1
+      userPoints = names[names.length - 2].points
+    names[names.length - 2].points = userPoints - 1
     localStorage.setItem("playersNames", JSON.stringify(names))
     }
-    
   } 
   if (matchesPlayer2 == -1) {
     if (player2Win == "true") {
-      userPoints = names[1].points
-    names[1].points = userPoints + 1
+      userPoints = names[names.length - 1].points
+    names[names.length - 1].points = userPoints + 1
     localStorage.setItem("playersNames", JSON.stringify(names))
     } else {
-      userPoints = names[1].points
-    names[1].points = userPoints - 1
+      userPoints = names[names.length - 1].points
+    names[names.length - 1].points = userPoints - 1
     localStorage.setItem("playersNames", JSON.stringify(names))
     }
-    
   } 
 }
