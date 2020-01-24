@@ -37,7 +37,6 @@ if (localStorage.getItem("playersNames") != null) {
     for (let i = 0; i < JSON.parse(localStorage.getItem("playersNames")).length; i++) {
         names.push(JSON.parse(localStorage.getItem("playersNames"))[i])
     }
-    console.log(JSON.parse(sessionStorage.getItem("nome"))[0]);
     names.push(JSON.parse(sessionStorage.getItem("nome"))[0])
     names.push(JSON.parse(sessionStorage.getItem("nome"))[1])
     console.log(names);
