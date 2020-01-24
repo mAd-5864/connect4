@@ -100,15 +100,19 @@ if (name.player2) {
 } */
 
 var modal = document.getElementById("myModal");
-var btn = document.getElementById("myBtn");
 window.onload = function() {
-  modal.style.display = "block";
+modal.style.display = "block";
 }
-const obj1
-const obj2
+
+let obj1 = []
+let obj2 = []
 let names = []
+let matchesPlayer1 = -1
+let matchesPlayer2 = -1
+let userPoints = 0
 document.querySelector("#btnStart").addEventListener("click", setSessionStorage);
 function setSessionStorage(event) {
+  event.preventDefault()
     const txtPlayer1 = document.getElementById("player1").value
         const txtPlayer2 = document.getElementById("player2").value
         if (txtPlayer1 != "" && txtPlayer2 != "") {
@@ -118,7 +122,6 @@ function setSessionStorage(event) {
               names.push(obj2)
               sessionStorage.setItem("nome", JSON.stringify(names))
         }
-    event.preventDefault()
     console.log(document.getElementsByTagName("form")[0].checkValidity());
     if (document.getElementsByTagName("form")[0].checkValidity()) {
       modal.style.display = "none";
@@ -133,26 +136,45 @@ if (localStorage.getItem("playersNames") == null) {
 } else 
 
 if (localStorage.getItem("playersNames") != null) {
-    names = []
+  names = JSON.parse(localStorage.getItem("playersNames"))
     for (let i = 0; i < JSON.parse(localStorage.getItem("playersNames")).length; i++) {
-        names.push(JSON.parse(localStorage.getItem("playersNames"))[i])
         if (obj1.player != JSON.parse(localStorage.getItem("playersNames"))[i].player) {
-          names.push(obj1)
-        }
+          
+        } else matchesPlayer1 = i
+      }
+        for (let i = 0; i < JSON.parse(localStorage.getItem("playersNames")).length; i++) {
         if (obj2.player != JSON.parse(localStorage.getItem("playersNames"))[i].player) {
-          names.push(obj2)
-        }
+          
+        } else matchesPlayer2 = i
     } 
-    console.log(names);
-localStorage.setItem("playersNames", JSON.stringify(names))
+
+    if (matchesPlayer1 != -1) {
+      userPoints = names[matchesPlayer1].points = userPoints + 1
+      names[matchesPlayer1].points = userPoints
+      localStorage.setItem("playersNames", JSON.stringify(names))
+    }
+    if (matchesPlayer2 != -1) {
+      userPoints = 0
+      userPoints = names[matchesPlayer2].points = userPoints + 1
+      names[matchesPlayer2].points = userPoints
+      localStorage.setItem("playersNames", JSON.stringify(names))
+    }
+    if (matchesPlayer1 == -1 || matchesPlayer2 == -1) {
+      if (matchesPlayer1 == -1) {
+        names.push(obj1)
+      } 
+      if (matchesPlayer2 == -1) {
+        names.push(obj2)
+      }
+          console.log(names);
+      localStorage.setItem("playersNames", JSON.stringify(names))
+    }
 }
 }
 
 function refreshPoints() {
   for (let i = 0; i < JSON.parse(localStorage.getItem("playersNames")).length; i++) {
 if (obj1.player == JSON.parse(localStorage.getItem("playersNames"))[i].player) {
-  if (gameWon == true) {
   
-  }
 }}
 }
