@@ -87,20 +87,9 @@ function dropAllPieces() {
 }
 function dropTroughColumn(x, freeSpaces) {
   for (let y = boardLength -1; y >= 0; y--) {
-    //console.log(`"y:"${y} "x:"${x}`);
-    console.log("freeSpaces: " + freeSpaces);
-    console.log("Y: " + y + "| X: " + x);
     if (board[y][x] == 0 ) {
       freeSpaces += 1
     } else {
-      
-      console.log("-----------");
-      console.log("-----------");
-      
-      console.log("freeSpaces: " + freeSpaces);
-      console.log("Y: " + y + "| X: " + x);
-      console.log("-----------");
-      
       board[y+freeSpaces][x] = board[y][x]
       if (freeSpaces != 0) {
         board[y][x] = 0
