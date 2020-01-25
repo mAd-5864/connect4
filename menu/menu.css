@@ -188,3 +188,24 @@ input:-webkit-autofill{
 #backBtn:focus{
   outline: 0;
 }
+
+#scoresBox {
+  background:linear-gradient(to bottom, #FFF125 0%,#F2C53D 100%);
+  width: 400px;
+  height: 600px;
+  position:relative;
+  margin: 25px auto;
+  border-radius: 50px;
+  text-align: center;
+}
+
+#txtRanking {
+  border-bottom: solid 1px #000;
+  padding: 30px;
+  font-size: 25px;
+  color: #000;
+}
+
+.txtPlayers {
+  font-size: 20px;
+}
