@@ -5,19 +5,22 @@ display = document.querySelector('#timer');
 
 function changeTurn() {
   if (turn) {
-    winCheck();
     arrowPlayer(redArrow, 1);
     clearInterval(timerStart)
     startTimer(playTime, display)
-  } else {
     winCheck();
+  } else {
     arrowPlayer(yellowArrow, 2);
     clearInterval(timerStart)
     startTimer(playTime, display)
+    winCheck();
   }
   turn = !turn
 }
 
+function stopTimer() {
+  display.textContent = ""
+}
 
 function startTimer(duration, display) {
   let timer = duration, seconds;

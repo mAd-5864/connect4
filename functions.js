@@ -151,11 +151,13 @@ function findWhoWon(y, x) {
     player1Win = "true"
     player2Win = "false"
     showWinModal()
+    stopTimer()
     resetBoard();
   } else if (board[y][x] === 2) {
     player1Win = "false"
     player2Win = "true"
     showWinModal()
+    stopTimer()
     resetBoard();
   }
   refreshPoints()
