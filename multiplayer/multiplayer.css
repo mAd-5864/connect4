@@ -45,14 +45,14 @@ body {
     outline: 0;   
   }
   
-  #firstText {
+  #firstText, #winPlayerName{
     border-bottom: solid 1px #000;
     padding: 30px;
     font-size: 25px;
     color: #000;
   }
   
-  #btnStart {
+  #btnStart, #playAgain, #goToScores, #leave {
     font-family: 'Righteous', cursive;
     border: 1px solid #000;
     align-items: center;
@@ -62,4 +62,26 @@ body {
     font-size: 15px;
     color: #fff;
     margin: 10px 0px;
+  }
+
+  .winModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  .winContainer {
+    background:linear-gradient(to bottom, #FFF125 0%,#F2C53D 100%);
+    width: 400px;
+    height: 250px;
+    position:relative;
+    margin:15% auto;
+    border-radius: 50px;
+    text-align: center;
   }

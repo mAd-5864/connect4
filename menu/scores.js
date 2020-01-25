@@ -110,14 +110,14 @@ if (localData != undefined) {
 
 }
 
-if (first) document.getElementById("txt1Player").innerHTML = `1º - ${first.player}`
-if (second) document.getElementById("txt2Player").innerHTML = `2º - ${second.player}`
-if (third) document.getElementById("txt3Player").innerHTML = `3º - ${third.player}`
-if (fourth) document.getElementById("txt4Player").innerHTML = `4º - ${fourth.player}`
-if (fifth) document.getElementById("txt5Player").innerHTML = `5º - ${fifth.player}`
-if (sixth) document.getElementById("txt6Player").innerHTML = `6º - ${sixth.player}`
-if (seventh) document.getElementById("txt7Player").innerHTML = `7º - ${seventh.player}`
-if (eighth) document.getElementById("txt8Player").innerHTML = `8º - ${eighth.player}`
-if (ninth) document.getElementById("txt9Player").innerHTML = `9º - ${ninth.player}`
-if (tenth) document.getElementById("txt10Player").innerHTML = `10º - ${tenth.player}`
+if (first) document.getElementById("txt1Player").innerHTML = `1º - ${first.player} : ${first.points}`
+if (second) document.getElementById("txt2Player").innerHTML = `2º - ${second.player} : ${second.points}`
+if (third) document.getElementById("txt3Player").innerHTML = `3º - ${third.player} : ${third.points}`
+if (fourth) document.getElementById("txt4Player").innerHTML = `4º - ${fourth.player} : ${fourth.points}`
+if (fifth) document.getElementById("txt5Player").innerHTML = `5º - ${fifth.player} : ${fifth.points}`
+if (sixth) document.getElementById("txt6Player").innerHTML = `6º - ${sixth.player} : ${sixth.points}`
+if (seventh) document.getElementById("txt7Player").innerHTML = `7º - ${seventh.player} : ${seventh.points}`
+if (eighth) document.getElementById("txt8Player").innerHTML = `8º - ${eighth.player} : ${eighth.points}`
+if (ninth) document.getElementById("txt9Player").innerHTML = `9º - ${ninth.player} : ${ninth.points}`
+if (tenth) document.getElementById("txt10Player").innerHTML = `10º - ${tenth.player} : ${tenth.points}`
 

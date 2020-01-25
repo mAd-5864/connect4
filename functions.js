@@ -150,12 +150,12 @@ function findWhoWon(y, x) {
   if (board[y][x] === 1) {
     player1Win = "true"
     player2Win = "false"
-    alert('Jogador 1 Ganhou!');
+    showWinModal()
     resetBoard();
   } else if (board[y][x] === 2) {
     player1Win = "false"
     player2Win = "true"
-    alert('Jogador 2 Ganhou!');
+    showWinModal()
     resetBoard();
   }
   refreshPoints()

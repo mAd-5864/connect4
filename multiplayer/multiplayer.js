@@ -95,6 +95,15 @@ if (name.player2) {
   document.getElementById("player2").innerHTML = name.player2
 }
 } */
+function showWinModal() {
+  let winModal = document.getElementById("winModal")
+  document.getElementById("playAgain").addEventListener("click", function() { winModal.style.display = "none" })
+  sessionData = JSON.parse(sessionStorage.getItem("nome"))
+  if (player1Win == "true") document.getElementById("winPlayerName").innerHTML = `${sessionData[0].player} Ganhou!`
+  if (player2Win == "true") document.getElementById("winPlayerName").innerHTML = `${sessionData[1].player} Ganhou!`
+  winModal.style.display = "block"
+}
+
 
 let modal = document.getElementById("myModal");
 window.onload = function () {
