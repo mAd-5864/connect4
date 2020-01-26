@@ -201,17 +201,33 @@ function refreshPoints() {
       localStorage.setItem("playersNames", JSON.stringify(names))
     }
   }
-  if (matchesPlayer1 == -1) {
-    if (player1Win == "true") {
-      userPoints = names[names.length - 2].points
-      names[names.length - 2].points = userPoints + 1
-      localStorage.setItem("playersNames", JSON.stringify(names))
-    } else {
-      userPoints = names[names.length - 2].points
-      names[names.length - 2].points = userPoints - 1
-      localStorage.setItem("playersNames", JSON.stringify(names))
+  if (matchesPlayer2 != -1) {
+    if (matchesPlayer1 == -1) {
+      if (player1Win == "true") {
+        userPoints = names[names.length - 1].points
+        names[names.length - 1].points = userPoints + 1
+        localStorage.setItem("playersNames", JSON.stringify(names))
+      } else {
+        userPoints = names[names.length - 1].points
+        names[names.length - 1].points = userPoints - 1
+        localStorage.setItem("playersNames", JSON.stringify(names))
+      }
     }
   }
+  if (matchesPlayer2 == -1) {
+    if (matchesPlayer1 == -1) {
+      if (player1Win == "true") {
+        userPoints = names[names.length - 2].points
+        names[names.length - 2].points = userPoints + 1
+        localStorage.setItem("playersNames", JSON.stringify(names))
+      } else {
+        userPoints = names[names.length - 2].points
+        names[names.length - 2].points = userPoints - 1
+        localStorage.setItem("playersNames", JSON.stringify(names))
+      }
+    }
+  }
+  
   if (matchesPlayer2 == -1) {
     if (player2Win == "true") {
       userPoints = names[names.length - 1].points
