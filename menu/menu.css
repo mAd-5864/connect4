@@ -209,3 +209,7 @@ input:-webkit-autofill{
 .txtPlayers {
   font-size: 20px;
 }
+
+.text-danger {
+  color: red;
+}

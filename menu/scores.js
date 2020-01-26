@@ -110,14 +110,14 @@ if (localData != undefined) {
 
 }
 
-if (first) document.getElementById("txt1Player").innerHTML = `1º - ${first.player} : ${first.points}`
-if (second) document.getElementById("txt2Player").innerHTML = `2º - ${second.player} : ${second.points}`
-if (third) document.getElementById("txt3Player").innerHTML = `3º - ${third.player} : ${third.points}`
-if (fourth) document.getElementById("txt4Player").innerHTML = `4º - ${fourth.player} : ${fourth.points}`
-if (fifth) document.getElementById("txt5Player").innerHTML = `5º - ${fifth.player} : ${fifth.points}`
-if (sixth) document.getElementById("txt6Player").innerHTML = `6º - ${sixth.player} : ${sixth.points}`
-if (seventh) document.getElementById("txt7Player").innerHTML = `7º - ${seventh.player} : ${seventh.points}`
-if (eighth) document.getElementById("txt8Player").innerHTML = `8º - ${eighth.player} : ${eighth.points}`
-if (ninth) document.getElementById("txt9Player").innerHTML = `9º - ${ninth.player} : ${ninth.points}`
-if (tenth) document.getElementById("txt10Player").innerHTML = `10º - ${tenth.player} : ${tenth.points}`
+if (first) document.getElementById("txt1Player").innerHTML = `1º - ${first.player} : <span class="text-danger">${first.points} </span> LP`
+if (second) document.getElementById("txt2Player").innerHTML = `2º - ${second.player} : <span class="text-danger"> ${second.points} </span> LP`
+if (third) document.getElementById("txt3Player").innerHTML = `3º - ${third.player} : <span class="text-danger"> ${third.points} </span> LP`
+if (fourth) document.getElementById("txt4Player").innerHTML = `4º - ${fourth.player} : <span class="text-danger"> ${fourth.points} </span> LP`
+if (fifth) document.getElementById("txt5Player").innerHTML = `5º - ${fifth.player} : <span class="text-danger"> ${fifth.points} </span> LP`
+if (sixth) document.getElementById("txt6Player").innerHTML = `6º - ${sixth.player} : <span class="text-danger"> ${sixth.points} </span> LP`
+if (seventh) document.getElementById("txt7Player").innerHTML = `7º - ${seventh.player} : <span class="text-danger"> ${seventh.points} </span> LP`
+if (eighth) document.getElementById("txt8Player").innerHTML = `8º - ${eighth.player} : <span class="text-danger"> ${eighth.points} </span> LP`
+if (ninth) document.getElementById("txt9Player").innerHTML = `9º - ${ninth.player} : <span class="text-danger"> ${ninth.points} </span> LP`
+if (tenth) document.getElementById("txt10Player").innerHTML = `10º - ${tenth.player} : <span class="text-danger"> ${tenth.points} </span> LP`
 
