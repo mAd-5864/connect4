@@ -52,7 +52,7 @@ body {
     color: #000;
   }
   
-  #btnStart, #playAgain, #goToScores, #leave {
+  #btnStart, #playAgain, #goToScores, #leave, #btnBackHome {
     font-family: 'Righteous', cursive;
     border: 1px solid #000;
     align-items: center;
