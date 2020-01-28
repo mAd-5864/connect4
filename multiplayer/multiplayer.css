@@ -64,6 +64,10 @@ body {
     margin: 10px 0px;
   }
 
+  #btnStart, #playAgain, #goToScores, #leave, #btnBackHome:hover  {
+    cursor: pointer;
+  }
+
   .winModal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
