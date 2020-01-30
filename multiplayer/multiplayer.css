@@ -1,91 +1,64 @@
 @import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
 body {
-    font-family: 'Righteous',cursive;
+    font-family: 'Righteous', cursive;
 }
 
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
 
-  .container {
-    background:linear-gradient(to bottom, #FFF125 0%,#F2C53D 100%);
+.container {
+    background: linear-gradient(to bottom, #FFF125 0%, #F2C53D 100%);
     width: 400px;
     height: 420px;
-    position:relative;
-    margin:15% auto;
+    position: relative;
+    margin: 15% auto;
     border-radius: 50px;
     text-align: center;
-  }
-  
-  .inputs {
+}
+
+.inputs {
     font-family: 'Righteous', cursive;
     margin: 15px 0px;
-    padding: 20px; 
+    padding: 20px;
     font-size: 20px;
     border-radius: 50px;
     border: #000 1px solid;
     background: #000;
     color: #fff;
-  }
-  input:-webkit-autofill{
-      box-shadow: none;
-      caret-color: #fff !important;
-      -webkit-box-shadow: 0 0 0 33px #000 inset !important;
-      -webkit-text-fill-color: #fff !important;
-  }
-  .inputs:focus, #btnStart:focus {
-    outline: 0;   
-  }
-  
-  #firstText, #winPlayerName{
+}
+
+input:-webkit-autofill {
+    box-shadow: none;
+    caret-color: #fff !important;
+    -webkit-box-shadow: 0 0 0 33px #000 inset !important;
+    -webkit-text-fill-color: #fff !important;
+}
+
+.inputs:focus,
+#btnStart:focus {
+    outline: 0;
+}
+
+#firstText,
+#winPlayerName {
     border-bottom: solid 1px #000;
     padding: 30px;
     font-size: 25px;
     color: #000;
-  }
-  
-  #btnStart, #playAgain, #goToScores, #leave, #btnBackHome {
-    font-family: 'Righteous', cursive;
-    border: 1px solid #000;
-    align-items: center;
-    padding: 15px;
-    border-radius: 25px;
-    background: #000;
-    font-size: 15px;
-    color: #fff;
-    margin: 10px 0px;
-  }
-
-  #btnStart, #playAgain, #goToScores, #leave, #btnBackHome:hover  {
-    cursor: pointer;
-  }
-
-  .winModal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-
-  .winContainer {
-    background:linear-gradient(to bottom, #FFF125 0%,#F2C53D 100%);
-    width: 400px;
-    height: 250px;
-    position:relative;
-    margin:15% auto;
-    border-radius: 50px;
-    text-align: center;
-  }
+}
