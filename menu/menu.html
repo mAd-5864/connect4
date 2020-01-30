@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,16 +9,34 @@
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" href="menu.css">
 </head>
+
 <body>
 
     <div class="menu">
         <div class="button" id="singleplayer"><button onclick="javascript:window.location.href='../singleplayer/singleplayer.html'">PLAYER<br>X<br>BOT</button></div>
         <div class="button" id="multiplayer"><button onclick="javascript:window.location.href='../multiplayer/multiplayer.html'">PLAYER <br> X <br> PLAYER</button></div>
         <div class="button" id="options"><button onclick="javascript:window.location.href='options.html'">OPTIONS</button></div>
-        <div class="button" id="scores"><button onclick="javascript:window.location.href='scores.html'">SCORES</button></div>
+        <div class="button" id="scores"><button onclick="javascript:window.location.href='scores.html'">RANKINGS</button></div>
         <div class="button" id="exit"><button onclick="javascript:window.close()">QUIT</button></div>
-        <img id="logo" class="logo logo-animation" src="../logos/logo-projeto-3.png" alt="">
+
     </div>
-      
-      </body>
+    <img id="logo" class="logo" src="../logos/logo-projeto-3.png" alt="">
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <img id="logo" class="" src="../logos/logo-projeto-3.png" alt="">
+        </div>
+    </div>
+    <script>
+        let modal = document.getElementById("myModal");
+        window.onload = function() {
+            modal.style.display = "block";
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
 </html>
