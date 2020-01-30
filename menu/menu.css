@@ -1,215 +1,270 @@
 @import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
-a{
-  color: inherit;
-  text-decoration: inherit;
+a {
+    color: inherit;
+    text-decoration: inherit;
 }
+
 body {
-  background:#000;
-  margin: 0;
-  font-family: 'Righteous', cursive;
+    background: #000;
+    margin: 0;
+    font-family: 'Righteous', cursive;
 }
-.menu{
-  display: flex;
-  justify-content: space-evenly;
-  margin: 100px;
+
+.menu {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 100px;
 }
 
 button {
-  border: none;
-  background: none;
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
+    border: none;
+    background: none;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
 }
+
 button:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
-button:focus{
-  outline: 0;
+
+button:focus {
+    outline: 0;
 }
+
 .button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  font-weight: bold;
-  margin: 1px;
-  color: #000;
-  border: 2px solid #F2C53D;
-  background: #F2C53D;
-  filter: brightness(90%);
-  background: linear-gradient(to bottom, #FFF125 0%,#F2C53D 100%);
-  transition-duration: 1s;
-  transition-property: all;
-  transition-timing-function: ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    font-weight: bold;
+    margin: 1px;
+    color: #000;
+    border: 2px solid #F2C53D;
+    background: #F2C53D;
+    filter: brightness(90%);
+    background: linear-gradient(to bottom, #FFF125 0%, #F2C53D 100%);
+    transition-duration: 1s;
+    transition-property: all;
+    transition-timing-function: ease;
 }
+
 .button:hover {
-  background: #ff1616;
-  border: 2px solid #ad0505;
-  cursor: pointer;
+    background: #ff1616;
+    border: 2px solid #ad0505;
+    cursor: pointer;
 }
-.button:focus{
-  outline: 0;
+
+.button:focus {
+    outline: 0;
 }
-.logo{
-  height: 100vh;
-  width: auto;
-  margin-top: -100px;
-  border-radius: 50px;
-  position: absolute;
+
+.logo {
+    height: 30vh;
+    width: auto;
+    margin: auto 33%;
+    border-radius: 50px;
+    position: absolute;
 }
-.logo-animation{
-  animation: 2s shrinkToBottom ease-in 0.5s;
-  animation-fill-mode: forwards;
+
+.logo-animation {
+    animation: 2s shrinkToBottom ease-in 0.5s;
+    animation-fill-mode: forwards;
 }
+
 @keyframes shrinkToBottom {
-  0% {
-    transform:  translate(0px,0px)  scaleX(1) scaleY(1);
-  }
-  80%{
-    transform: translateY(50px) scaleX(0.40) scaleY(0.40);
-  }
-  100% {
-    transform:  translateY(150px)  scaleX(0.50) scaleY(0.50);
-  }
+    0% {
+        transform: translate(0px, 0px) scaleX(1) scaleY(1);
+    }
+    80% {
+        transform: translateY(50px) scaleX(0.40) scaleY(0.40);
+    }
+    100% {
+        transform: translateY(150px) scaleX(0.50) scaleY(0.50);
+    }
 }
+
 .switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
 }
+
 .switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
+
 .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 20px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  transition: .4s;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    transition: .4s;
 }
+
 .slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 3px;
-  bottom: 3px;
-  border-radius: 50%;
-  background-color: #000;
-  transition: .4s;
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 3px;
+    bottom: 3px;
+    border-radius: 50%;
+    background-color: #000;
+    transition: .4s;
 }
-input:checked + .slider {
-  background-color: #000;
-  border: 2px solid #333;
+
+input:checked+.slider {
+    background-color: #000;
+    border: 2px solid #333;
 }
-input:focus + .slider {
-  box-shadow: 0 0 1px #000;
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #000;
 }
-input:checked + .slider:before {
-  transform: translateX(26px);
-  background-color: #fff;
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+    background-color: #fff;
 }
+
 .container {
-  background:linear-gradient(to bottom, #FFF125 0%,#F2C53D 100%);
-  width: 400px;
-  height: 420px;
-  position:relative;
-  margin:auto;
-  border-radius: 50px;
-  text-align: center;
+    background: linear-gradient(to bottom, #FFF125 0%, #F2C53D 100%);
+    width: 400px;
+    height: 420px;
+    position: relative;
+    margin: auto;
+    border-radius: 50px;
+    text-align: center;
 }
 
 .inputs {
-  font-family: 'Righteous', cursive;
-  margin: 15px 0px;
-  padding: 20px; 
-  font-size: 20px;
-  border-radius: 50px;
-  border: #000 1px solid;
-  background: #000;
-  color: #fff;
+    font-family: 'Righteous', cursive;
+    margin: 15px 0px;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 50px;
+    border: #000 1px solid;
+    background: #000;
+    color: #fff;
 }
-input:-webkit-autofill{
+
+input:-webkit-autofill {
     box-shadow: none;
     caret-color: #fff !important;
     -webkit-box-shadow: 0 0 0 33px #000 inset !important;
     -webkit-text-fill-color: #fff !important;
 }
-.inputs:focus, #btnStart:focus {
-  outline: 0;   
+
+.inputs:focus,
+#btnStart:focus {
+    outline: 0;
 }
 
 #firstText {
-  border-bottom: solid 1px #000;
-  padding: 30px;
-  font-size: 25px;
+    border-bottom: solid 1px #000;
+    padding: 30px;
+    font-size: 25px;
 }
 
 #btnStart {
-  font-family: 'Righteous', cursive;
-  border: 1px solid #000;
-  align-items: center;
-  padding: 15px;
-  border-radius: 25px;
-  background: #000;
-  font-size: 15px;
-  color: #fff;
-  margin: 10px 0px;
+    font-family: 'Righteous', cursive;
+    border: 1px solid #000;
+    align-items: center;
+    padding: 15px;
+    border-radius: 25px;
+    background: #000;
+    font-size: 15px;
+    color: #fff;
+    margin: 10px 0px;
 }
-#backBtn{
-  position: absolute;
-  margin-top: 1vh;
-  background: none;
-  border: none;
-  height: 20px;
-  width: 80px;
+
+#backBtn {
+    position: absolute;
+    margin-top: 1vh;
+    background: none;
+    border: none;
+    height: 20px;
+    width: 80px;
 }
-#backBtn img{
-  border: 3px solid #000;
-  border-radius: 10px;
-  height: 15px;
-  width: 60px;
+
+#backBtn img {
+    border: 3px solid #000;
+    border-radius: 10px;
+    height: 15px;
+    width: 60px;
 }
-#backBtn img:hover{
-  border: 3px solid #ad0505;
+
+#backBtn img:hover {
+    border: 3px solid #ad0505;
 }
-#backBtn:focus{
-  outline: 0;
+
+#backBtn:focus {
+    outline: 0;
 }
 
 #scoresBox {
-  background:linear-gradient(to bottom, #FFF125 0%,#F2C53D 100%);
-  width: 400px;
-  height: 600px;
-  position:relative;
-  margin: 25px auto;
-  border-radius: 50px;
-  text-align: center;
+    background: linear-gradient(to bottom, #FFF125 0%, #F2C53D 100%);
+    width: 400px;
+    height: 600px;
+    position: relative;
+    margin: 5% auto;
+    border: solid 3px #F2C53D;
+    border-radius: 50px;
+    text-align: center;
 }
 
 #txtRanking {
-  border-bottom: solid 1px #000;
-  padding: 30px;
-  font-size: 25px;
-  color: #000;
+    border-bottom: solid 1px #000;
+    padding: 30px;
+    font-size: 25px;
+    color: #000;
 }
 
 .txtPlayers {
-  font-size: 20px;
+    font-size: 20px;
 }
 
 .text-danger {
-  color: red;
+    color: red;
+}
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Black w/ opacity */
+}
+
+.modal-content {
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 3px solid #888;
+    border-radius: 10px;
+    width: 62%;
+    /* Could be more or less, depending on screen size */
 }

@@ -2,30 +2,37 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <link rel="stylesheet" href="../style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
-  <button id="backBtn" onclick="javascript:history.go(-1)"><img src="../logos/back.png" alt="Página Anterior"></button>
-  <div id="align">
-    <div class="arrows" id="arrows">
-
+    <div id="winModal" class="winModal">
+        <div class="winContainer">
+            <p id="winPlayerName"></p>
+            <button id="playAgain">Jogar de novo</button>
+            <button id="leave" onclick="javascript:window.location.href='../menu/menu.html'">Sair</button>
+        </div>
     </div>
-    <div class="border">
-      <table id="board" class="board">
-        <tbody id="boardConstructor">
+    <button id="backBtn" onclick="javascript:history.go(-1)"><img src="../logos/back.png" alt="Página Anterior"></button>
+    <div id="align">
+        <div class="arrows" id="arrows">
 
-        </tbody>
-      </table>
+        </div>
+        <div class="border">
+            <table id="board" class="board">
+                <tbody id="boardConstructor">
+
+                </tbody>
+            </table>
+        </div>
+        <div class="rotate"><button id="rotate" type="button" onclick="chanceRotate()">ROTATE</button></div>
     </div>
-    <div class="rotate"><button id="rotate" type="button" onclick="chanceRotate()">ROTATE</button></div>
-  </div>
-  <script src="../functions.js"></script>
-  <script src="singlePlayer.js"></script>
+    <script src="../functions.js"></script>
+    <script src="singlePlayer.js"></script>
 </body>
 
 </html>
