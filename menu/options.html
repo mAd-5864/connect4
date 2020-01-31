@@ -11,11 +11,44 @@
 
 <body>
     <button id="backBtn" onclick="javascript:history.go(-1)"><img src="../logos/back.png" alt="Página Anterior"></button>
-    <label class="switch">
-        <input type="checkbox">
-        <span class="slider round"></span>
-    </label>
-
+    <button id="backBtn" onclick="javascript:window.location.href='menu.html'"><img src="../logos/back.png" alt="Página Anterior"></button>
+    <div id="optionsBox">
+        <br> 
+        <table>
+           <tr>
+               <th class="trOptions">Cores dos</th>
+               <td>Jogador 1 <i class="fas fa-palette"></i></td>
+               <td> <select name="" class="sltColor">
+                   <option value="0">Vermelho</option>
+                   <option value="1">Amarelo</option>
+                   <option value="2">Azul</option>
+                   <option value="3">Verde</option>
+                   <option value="4">Cinzento</option>
+               </select> </td>
+           </tr>
+           <tr>
+            <th class="trOptions">Jogadores</th>
+            <td>Jogador 2 <i class="fas fa-palette"></i></td>
+            <td> <select name="" class="sltColor">
+                <option value="0">Vermelho</option>
+                   <option value="1">Amarelo</option>
+                   <option value="2">Azul</option>
+                   <option value="3">Verde</option>
+                   <option value="4">Cinzento</option>
+            </select> </td>
+        </tr>
+        </table>
+        <hr style="border-color: #000;">
+        <p style="padding-left: 50px">Tamanho do Tabuleiro <select name="" id="" class="sltBoard">
+            <option value="" class="boardOption">6x6</option>
+            <option value="" class="boardOption">7x7</option>
+            <option value="" class="boardOption">8x8</option>
+            <option value="" class="boardOption">9x9</option>
+            <option value="" class="boardOption">10x10</option>
+        </select></p>
+    </div>
+    <script src="https://kit.fontawesome.com/ff755c1dbb.js" crossorigin="anonymous"></script>
+<script src="options.js"></script>
 </body>
 
 </html>
