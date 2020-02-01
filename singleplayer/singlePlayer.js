@@ -1,6 +1,9 @@
 let number = 0
 let numberM = 0
+let attempts
+let boardSize
 
+//easy difficulty CPU
 function arrowCPU(value) {
     for (let i = 0; i < boardLength; i++) {
         arrow = document.querySelector(`#arrow${i}`)
@@ -21,6 +24,7 @@ function arrowCPU(value) {
     }
 }
 
+//medium difficulty CPU
 function arrowCPUMedium(value) {
     for (let i = 0; i < boardLength; i++) {
         arrow = document.querySelector(`#arrow${i}`)
@@ -35,6 +39,8 @@ function arrowCPUMedium(value) {
 }
 
 function check3CPU() {
+    attempts = 0
+    boardSize = 0
     for (let x = 0; x < boardLength; x++) {
         for (let y = 0; y < boardLength; y++) {
             if (x < boardLength - 3 && board[y][x] != 0 && board[y][x + 1] == board[y][x]) {
@@ -49,8 +55,12 @@ function check3CPU() {
             } else if (x < boardLength - 3 && y > 2 && board[y][x] != 0 && board[y - 1][x + 1] == board[y][x]) {
                 blockOpponent(x, y, -2, 2, -3, 3);
                 console.log('bot 4');
-            }
+            } else { attempts++ }
+            boardSize++
         }
+    }
+    if (attempts == boardSize) {
+        arrowCPU(2)
     }
 }
 
@@ -64,16 +74,18 @@ function blockOpponent(x, y, first, second, third, forth) {
         } else if (y > boardLength + 1 && [y + third + 1][x + forth] == 0 && board[y + third][x + forth] == 0) {
             dropPiece(x + forth, 2)
             console.log("Pensavas!! 2");
-        } else arrowCPU(2)
+        } else attempts++
     }
 }
 
+//generate randomn column for the CPU to play in
 function randomNumber() {
     let n = Math.random() * boardLength - 1
     number = Math.ceil(n);
     numberM = number
 }
 
+//function to alternate turns
 function changeTurn() {
     if (turn) {
         winCheck();
@@ -85,6 +97,7 @@ function changeTurn() {
     turn = !turn
 }
 
+//trigger alert to show winner
 function findWhoWon(y, x) {
     if (board[y][x] === 1) {
         showWinModal(true)
