@@ -11,6 +11,7 @@ function arrowCPU(value) {
     }
     randomNumber()
     console.log("coluna:" + number);
+    console.log("entrou no arrowCPU");
     if (board[0][number] !== 0 && value === 2) {
         console.log(`Está ocupada por ${board[0][number]}`);
         arrowCPU(value)
@@ -19,6 +20,7 @@ function arrowCPU(value) {
             dropPiece(number, value)
         }, 1000)
         setTimeout(function() {
+            console.log("mudou de turno")
             changeTurn()
         }, 1000)
     }
@@ -33,9 +35,6 @@ function arrowCPUMedium(value) {
     setTimeout(function() {
         check3CPU()
     }, 1000)
-    setTimeout(function() {
-        changeTurn()
-    }, 1000)
 }
 
 function check3CPU() {
@@ -44,15 +43,19 @@ function check3CPU() {
     for (let x = 0; x < boardLength; x++) {
         for (let y = 0; y < boardLength; y++) {
             if (x < boardLength - 3 && board[y][x] != 0 && board[y][x + 1] == board[y][x]) {
+                // verificar horizontal para a direita
                 blockOpponent(x, y, 0, 2, 0, 3);
                 console.log('bot 1');
             } else if (y > 3 && board[y][x] != 0 && board[y - 1][x] == board[y][x]) {
+                // verificar vertical
                 blockOpponent(x, y, -2, 0, -3, 0);
                 console.log('bot 2');
             } else if (x < boardLength - 3 && y < boardLength - 3 && board[y][x] != 0 && board[y + 1][x + 1] == board[y][x]) {
+                // verificar diagonal para baixo
                 blockOpponent(x, y, 2, 2, 3, 3);
                 console.log('bot 3');
             } else if (x < boardLength - 3 && y > 2 && board[y][x] != 0 && board[y - 1][x + 1] == board[y][x]) {
+                // verificar diagonal para cima
                 blockOpponent(x, y, -2, 2, -3, 3);
                 console.log('bot 4');
             } else { attempts++ }
@@ -70,12 +73,14 @@ function blockOpponent(x, y, first, second, third, forth) {
         console.log("third: " + y);
         if (y < boardLength && board[y + third][x + forth] == 0) {
             dropPiece(x + forth, 2)
+            changeTurn()
             console.log("Pensavas!!");
         } else if (y > boardLength + 1 && [y + third + 1][x + forth] == 0 && board[y + third][x + forth] == 0) {
             dropPiece(x + forth, 2)
+            changeTurn()
             console.log("Pensavas!! 2");
         } else attempts++
-    }
+    } else attempts++
 }
 
 //generate randomn column for the CPU to play in
