@@ -1,6 +1,7 @@
 let playTime, display;
 let timerStart
 playTime = 14;
+
 display = document.querySelector('#timer');
 
 function changeTurn() {
@@ -47,19 +48,7 @@ function startTimer(duration, display) {
     }, 1000);
 }
 
-function customAlert(button) {
-    this.render = () => {
-        let winH = window.innerHeight
-        let winW = window.innerWidth
-        let dialogOverlay = document.getElementById('dialogoverlay')
-        let dialogBox = document.getElementById('dialogbox')
-        dialogOverlay.style.display = "block"
-        dialogOverlay.style.height = winH + "px"
-    }
-    this.ok = () => {
 
-    }
-}
 
 let table
 
@@ -244,13 +233,13 @@ function findWhoWon(y, x) {
         player1Win = "true"
         player2Win = "false"
         showWinModal()
-        stopTimer()
+        clearInterval(timerStart)
         resetBoard();
     } else if (board[y][x] === 2) {
         player1Win = "false"
         player2Win = "true"
         showWinModal()
-        stopTimer()
+        clearInterval(timerStart)
         resetBoard();
     }
     refreshPoints()
