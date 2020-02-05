@@ -107,7 +107,6 @@ if (localData != undefined) {
                 }
         }
     }
-
 }
 
 if (first) document.getElementById("txt1Player").innerHTML = `1º - ${first.player} : <span class="text-danger">${first.points} </span> LP`

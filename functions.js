@@ -1,5 +1,10 @@
 // board constructor
-const boardLength = 6
+let boardLength
+if (JSON.parse(localStorage.getItem("boardLength")) != undefined) {
+    boardLength = JSON.parse(localStorage.getItem("boardLength"))
+} else boardLength = 6
+
+console.log(boardLength);
 const board = []
 let count = 0
 
