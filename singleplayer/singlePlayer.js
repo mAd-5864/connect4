@@ -96,7 +96,7 @@ function changeTurn() {
     if (turn) {
         winCheck();
         chanceRotate()
-        arrowPlayer(redArrow, 1);
+        arrowPlayer(player1Color, 1);
     } else {
         winCheck();
         chanceRotate()

@@ -12,13 +12,13 @@ function changeTurn() {
         winCheck();
         chanceRotate()
         startTimer(playTime, timerDisplay)
-        arrowPlayer(redArrow, 1);
+        arrowPlayer(player1Arrow, 1);
     } else {
         clearInterval(timerStart)
         winCheck();
         chanceRotate()
         startTimer(playTime, timerDisplay)
-        arrowPlayer(yellowArrow, 2);
+        arrowPlayer(player2Arrow, 2);
     }
     turn = !turn
 }

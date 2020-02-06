@@ -4,9 +4,22 @@ if (JSON.parse(localStorage.getItem("boardLength")) != undefined) {
     boardLength = JSON.parse(localStorage.getItem("boardLength"))
 } else boardLength = 6
 
-console.log(boardLength);
 const board = []
 let count = 0
+
+let player1Color
+let player2Color
+if (localStorage.getItem("Player1Color") != undefined) {
+    player1Color = localStorage.getItem("Player1Color")
+    player2Color = localStorage.getItem("Player2Color")
+} else {
+    player1Color = 'red'
+    player2Color = 'yellow'
+}
+
+let arrow
+let player1Arrow = `<img src="../logos/arrow-${player1Color}.png"></img>`;
+let player2Arrow = `<img src="../logos/arrow-${player2Color}.png"></img>`;
 
 
 function createBoard() {
@@ -23,7 +36,7 @@ function createBoard() {
     }
     divArrows = document.querySelector("#arrows")
     for (let i = 0; i < boardLength; i++) {
-        divArrows.innerHTML += `<button id="arrow${i}"><img src="../logos/arrow-down-red.png"></img></button>`
+        divArrows.innerHTML += `<button id="arrow${i}">${player1Arrow}`
     }
 }
 createBoard()
@@ -40,9 +53,9 @@ function colorBoard() {
     for (let i = 0; i < boardLength; i++) {
         for (let j = 0; j < boardLength; j++) {
             if (board[j][i] === 1) {
-                document.querySelector(`#slot-${j}-${i}`).className = 'red'
+                document.querySelector(`#slot-${j}-${i}`).className = player1Color
             } else if (board[j][i] === 2) {
-                document.querySelector(`#slot-${j}-${i}`).className = 'yellow'
+                document.querySelector(`#slot-${j}-${i}`).className = player2Color
             } else {
                 document.querySelector(`#slot-${j}-${i}`).className = ''
             }
@@ -116,10 +129,10 @@ function dropPiece(column, color) { //column => Número da coluna // color => re
         if (board[i][column] === 0) {
             board[i][column] = color;
             if (board[i][column] === 1) {
-                document.querySelector(`#slot-${i}-${column}`).className = 'red'
+                document.querySelector(`#slot-${i}-${column}`).className = player1Color
             }
             if (board[i][column] === 2) {
-                document.querySelector(`#slot-${i}-${column}`).className = 'yellow'
+                document.querySelector(`#slot-${i}-${column}`).className = player2Color
             }
             break
         }
@@ -161,10 +174,6 @@ let player2Win = ""
 
 
 //buttons to allow clicks
-let arrow
-let redArrow = '<img src="../logos/arrow-down-red.png"></img>';
-let yellowArrow = '<img src="../logos/arrow-down-yellow.png"></img>';
-
 function arrowPlayer(color, value) {
     for (let i = 0; i < boardLength; i++) {
         arrow = document.querySelector(`#arrow${i}`)
@@ -189,5 +198,5 @@ let turn
 
 
 
-arrowPlayer(redArrow, 1)
+arrowPlayer(player1Arrow, 1)
 console.log(board);
