@@ -58,10 +58,12 @@ function chanceRotate() {
     let chance = Math.random() * 10;
     if (chance > 9.35) {
         console.log("Rodou Direita");
+        alert("Rodou 90° para a direita")
         rotateMatrixRight(board)
         dropAllPieces()
     } else if (chance < 0.35) {
         console.log("Rodou Esquerda");
+        alert("Rodou 90° para a esquerda")
         rotateMatrixRight(board)
         rotateMatrixRight(board)
         rotateMatrixRight(board)
@@ -92,6 +94,7 @@ function dropAllPieces() {
         dropTroughColumn(x, 0)
     }
     colorBoard()
+    winCheck()
 }
 
 function dropTroughColumn(x, freeSpaces) {
