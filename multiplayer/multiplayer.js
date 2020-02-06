@@ -1,25 +1,29 @@
+let winModal = document.getElementById("winModal")
 let playTime, display;
 let timerStart
-playTime = 14;
+playTime = 15;
 
-display = document.querySelector('#timer');
+timerDisplay = document.querySelector('#timer');
+
 
 function changeTurn() {
     if (turn) {
+        clearInterval(timerStart)
+        winCheck();
+        chanceRotate()
+        startTimer(playTime, timerDisplay)
         arrowPlayer(redArrow, 1);
-        clearInterval(timerStart)
-        startTimer(playTime, display)
-        winCheck();
     } else {
-        arrowPlayer(yellowArrow, 2);
         clearInterval(timerStart)
-        startTimer(playTime, display)
         winCheck();
+        chanceRotate()
+        startTimer(playTime, timerDisplay)
+        arrowPlayer(yellowArrow, 2);
     }
     turn = !turn
 }
 
-function startTimer(duration, display) {
+function startTimer(duration, timerDisplay) {
     let timer = duration,
         seconds;
     timerStart = setInterval(function() {
@@ -29,17 +33,20 @@ function startTimer(duration, display) {
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        display.textContent = seconds + "s";
+        timerDisplay.textContent = seconds + "s";
 
-        if (--timer < 0) {
+        console.log(winModal.style.display);
+        if (--timer < 0 && winModal.style.display === "") {
             changeTurn()
             timer = duration;
+        } else if (winModal.style.display === "block") {
+            clearInterval(timerStart)
         }
 
         if (seconds <= 5) {
-            display.style.color = "red"
+            timerDisplay.style.color = "red"
         } else {
-            display.style.color = '#fff'
+            timerDisplay.style.color = '#fff'
         }
     }, 1000);
 }
@@ -73,7 +80,6 @@ function saveData() {
     console.log(table);
     const divTable = document.getElementById("divTable")
     divTable.innerHTML = table
-    console.log(document.getElementById("divTable"));
 }
 /* saveData() */
 /* 
@@ -97,9 +103,9 @@ let matchesPlayer2 = -1
 let userPoints = 0
 document.querySelector("#btnStart").addEventListener("click", setSessionStorage);
 
-let modal = document.getElementById("myModal");
+let startModal = document.getElementById("myModal");
 window.onload = function() {
-    modal.style.display = "block";
+    startModal.style.display = "block";
 }
 
 function setSessionStorage(event) {
@@ -115,9 +121,9 @@ function setSessionStorage(event) {
         names.push(obj2)
         sessionStorage.setItem("nome", JSON.stringify(names))
     }
-    console.log(document.getElementsByTagName("form")[0].checkValidity());
+    console.log("form validity: " + document.getElementsByTagName("form")[0].checkValidity());
     if (document.getElementsByTagName("form")[0].checkValidity()) {
-        modal.style.display = "none";
+        startModal.style.display = "none";
     }
     saveLocalData()
 }
@@ -226,24 +232,21 @@ function refreshPoints() {
 
 function findWhoWon(y, x) {
     if (board[y][x] === 1) {
+        clearInterval(timerStart)
         player1Win = "true"
         player2Win = "false"
         showWinModal()
-        clearInterval(timerStart)
-        resetBoard();
     } else if (board[y][x] === 2) {
+        clearInterval(timerStart)
         player1Win = "false"
         player2Win = "true"
         showWinModal()
-        clearInterval(timerStart)
-        resetBoard();
     }
     refreshPoints()
 }
 //alert box shown on win situation
 function showWinModal() {
-    let winModal = document.getElementById("winModal")
-    document.getElementById("playAgain").addEventListener("click", function() { winModal.style.display = "none" })
+    document.getElementById("playAgain").addEventListener("click", function() { winModal.style.display = "", resetBoard(); })
     sessionData = JSON.parse(sessionStorage.getItem("nome"))
     if (player1Win == "true") document.getElementById("winPlayerName").innerHTML = `${sessionData[0].player} Ganhou!`
     if (player2Win == "true") document.getElementById("winPlayerName").innerHTML = `${sessionData[1].player} Ganhou!`
