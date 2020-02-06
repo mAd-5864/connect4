@@ -106,7 +106,17 @@ button:focus {
     background: linear-gradient(to bottom, #ff1616 0%, #ad0505 100%);
 }
 
+.red {
+    background: #ad0505;
+    background: linear-gradient(to bottom, #ff1616 0%, #ad0505 100%);
+}
+
 .board button.yellow {
+    background: #F2C53D;
+    background: linear-gradient(to bottom, #FFF125 0%, #F2C53D 100%);
+}
+
+.yellow {
     background: #F2C53D;
     background: linear-gradient(to bottom, #FFF125 0%, #F2C53D 100%);
 }
@@ -116,7 +126,17 @@ button:focus {
     background: linear-gradient(to bottom, #2039CC 0%, #111E6C 100%);
 }
 
+.blue {
+    background: #111E6C;
+    background: linear-gradient(to bottom, #2039CC 0%, #111E6C 100%);
+}
+
 .board button.green {
+    background: #006B21;
+    background: linear-gradient(to bottom, #67B51B 0%, #006B21 100%);
+}
+
+.green {
     background: #006B21;
     background: linear-gradient(to bottom, #67B51B 0%, #006B21 100%);
 }
@@ -126,12 +146,27 @@ button:focus {
     background: linear-gradient(to bottom, #8700CB 0%, #54007F 100%);
 }
 
+.purple {
+    background: #54007F;
+    background: linear-gradient(to bottom, #8700CB 0%, #54007F 100%);
+}
+
 .board button.pink {
     background: #AA1040;
     background: linear-gradient(to bottom, #D34671 0%, #AA1040 100%);
 }
 
+.pink {
+    background: #AA1040;
+    background: linear-gradient(to bottom, #D34671 0%, #AA1040 100%);
+}
+
 .board button.orange {
+    background: #C03C00;
+    background: linear-gradient(to bottom, #E64800 0%, #C03C00 100%);
+}
+
+.orange {
     background: #C03C00;
     background: linear-gradient(to bottom, #E64800 0%, #C03C00 100%);
 }
@@ -155,23 +190,19 @@ button:focus {
 }
 
 #hubPlayer1 {
-    background: linear-gradient(to bottom, #ff1616 0%, #ad0505 100%);
     color: #000;
     position: absolute;
     width: 200px;
     height: 75px;
-    border: solid 1px #ad0505;
     border-radius: 50px;
     margin: 100px 0 0 -600px;
 }
 
 #hubPlayer2 {
-    background: linear-gradient(to bottom, #FFF125 0%, #F2C53D 100%);
     color: #000;
     position: absolute;
     width: 200px;
     height: 75px;
-    border: solid 1px #F2C53D;
     border-radius: 50px;
     margin: 100px 0 0 400px;
 }

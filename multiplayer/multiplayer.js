@@ -92,8 +92,8 @@ if (name.player2) {
 }
 } */
 
-
-
+document.getElementById("hubPlayer1").className = localPlayersColors.player1Color
+document.getElementById("hubPlayer2").className = localPlayersColors.player2Color
 
 let obj1 = []
 let obj2 = []
@@ -109,6 +109,7 @@ window.onload = function() {
 }
 
 function setSessionStorage(event) {
+    
     event.preventDefault()
     const txtPlayer1 = document.getElementById("player1").value
     const txtPlayer2 = document.getElementById("player2").value

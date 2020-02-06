@@ -49,6 +49,15 @@ function resetBoard() {
 }
 resetBoard()
 
+/* if (JSON.parse(localData.getItem("playersColors")) == undefined) {
+    colorsObj = {
+        player1Color = "red",
+        player2Color = "yellow"
+    }
+    localStorage.setItem("playersColors", JSON.stringify(colorsObj))
+} */
+const localPlayersColors = JSON.parse(localStorage.getItem("playersColors"))
+
 function colorBoard() {
     for (let i = 0; i < boardLength; i++) {
         for (let j = 0; j < boardLength; j++) {
@@ -62,9 +71,6 @@ function colorBoard() {
         }
     }
 }
-
-
-
 
 // rotate board function
 function chanceRotate() {

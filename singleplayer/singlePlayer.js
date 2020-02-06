@@ -99,7 +99,7 @@ function changeTurn() {
         arrowPlayer(player1Color, 1);
     } else {
         winCheck();
-        chanceRotate()
+        // chanceRotate()
         arrowCPUMedium(2);
     }
     turn = !turn
