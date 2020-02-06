@@ -19,10 +19,6 @@ function changeTurn() {
     turn = !turn
 }
 
-function stopTimer() {
-    display.textContent = ""
-}
-
 function startTimer(duration, display) {
     let timer = duration,
         seconds;
