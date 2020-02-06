@@ -109,6 +109,7 @@ button:focus {
 .red {
     background: #ad0505;
     background: linear-gradient(to bottom, #ff1616 0%, #ad0505 100%);
+    border: 1px solid #ad0505;
 }
 
 .board button.yellow {
@@ -119,6 +120,7 @@ button:focus {
 .yellow {
     background: #F2C53D;
     background: linear-gradient(to bottom, #FFF125 0%, #F2C53D 100%);
+    border: 1px solid #F2C53D;
 }
 
 .board button.blue {
@@ -129,6 +131,7 @@ button:focus {
 .blue {
     background: #111E6C;
     background: linear-gradient(to bottom, #2039CC 0%, #111E6C 100%);
+    border: 1px solid #111E6C;
 }
 
 .board button.green {
@@ -139,6 +142,7 @@ button:focus {
 .green {
     background: #006B21;
     background: linear-gradient(to bottom, #67B51B 0%, #006B21 100%);
+    border: 1px solid #006B21;
 }
 
 .board button.purple {
@@ -149,6 +153,7 @@ button:focus {
 .purple {
     background: #54007F;
     background: linear-gradient(to bottom, #8700CB 0%, #54007F 100%);
+    border: 1px solid #54007F;
 }
 
 .board button.pink {
@@ -159,6 +164,7 @@ button:focus {
 .pink {
     background: #AA1040;
     background: linear-gradient(to bottom, #D34671 0%, #AA1040 100%);
+    border: 1px solid #AA1040;
 }
 
 .board button.orange {
@@ -169,6 +175,7 @@ button:focus {
 .orange {
     background: #C03C00;
     background: linear-gradient(to bottom, #E64800 0%, #C03C00 100%);
+    border: 1px solid #C03C00;
 }
 
 #rotate {
@@ -314,6 +321,7 @@ button:focus {
     text-align: center;
 }
 
+#seeBoard,
 #btnStart,
 #playAgain,
 #goToScores,
@@ -330,6 +338,7 @@ button:focus {
     margin: 10px 0px;
 }
 
+#seeBoard,
 #btnStart,
 #playAgain,
 #goToScores,
@@ -344,4 +353,5 @@ button:focus {
     padding: 30px;
     font-size: 25px;
     color: #000;
+    margin-bottom: 5px;
 }

@@ -3,6 +3,9 @@ let playTime, display;
 let timerStart
 playTime = 15;
 
+document.getElementById("hubPlayer1").className = player1Color
+document.getElementById("hubPlayer2").className = player2Color
+
 timerDisplay = document.querySelector('#timer');
 
 
@@ -53,47 +56,7 @@ function startTimer(duration, timerDisplay) {
 
 
 
-let table
 
-function saveData() {
-    names = JSON.parse(sessionStorage.getItem("nome"))
-
-    table = "<table>"
-
-    for (const name of names) {
-        if (name.player1) {
-            table += `
-    <tr>
-     <td> ${name.player1} </td>
-     </tr>
-    `
-        }
-        if (name.player2) {
-            table += `
-    <tr>
-     <td> ${name.player2} </td>
-     </tr>
-    `
-        }
-    }
-    table += "</table>"
-    console.log(table);
-    const divTable = document.getElementById("divTable")
-    divTable.innerHTML = table
-}
-/* saveData() */
-/* 
-for (const name of names) {
-  if (name.player1) {
-    document.getElementById("player1").innerHTML = name.player1
-  }
-if (name.player2) {
-  document.getElementById("player2").innerHTML = name.player2
-}
-} */
-
-document.getElementById("hubPlayer1").className = localPlayersColors.player1Color
-document.getElementById("hubPlayer2").className = localPlayersColors.player2Color
 
 let obj1 = []
 let obj2 = []
@@ -109,7 +72,7 @@ window.onload = function() {
 }
 
 function setSessionStorage(event) {
-    
+
     event.preventDefault()
     const txtPlayer1 = document.getElementById("player1").value
     const txtPlayer2 = document.getElementById("player2").value
@@ -253,3 +216,7 @@ function showWinModal() {
     if (player2Win == "true") document.getElementById("winPlayerName").innerHTML = `${sessionData[1].player} Ganhou!`
     winModal.style.display = "block"
 }
+
+document.getElementById("seeBoard").addEventListener("click", function() {
+    winModal.style.display = "none"
+})
