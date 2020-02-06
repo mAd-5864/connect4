@@ -219,4 +219,8 @@ function showWinModal() {
 
 document.getElementById("seeBoard").addEventListener("click", function() {
     winModal.style.display = "none"
+    for (let i = 0; i < boardLength; i++) {
+        arrow = document.querySelector(`#arrow${i}`)
+        arrow.disabled = true
+    }
 })
