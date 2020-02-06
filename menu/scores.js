@@ -1,4 +1,3 @@
-let first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth
 let localData = JSON.parse(localStorage.getItem("playersNames"))
 
 localData.sort(function(a, b) {
