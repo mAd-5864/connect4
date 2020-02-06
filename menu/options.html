@@ -17,23 +17,23 @@
             <tr>
                 <th class="trOptions">Cores dos</th>
                 <td><i class="fas fa-palette"></i> Jogador 1 </td>
-                <td> <select name="" class="sltColor sltStyle">
-                   <option value="0"> Vermelho</option>
-                   <option value="1"> Amarelo</option>
-                   <option value="2"> Azul</option>
-                   <option value="3"> Verde</option>
-                   <option value="4"> Cinzento</option>
+                <td> <select id="sltPlayer1Color" class="sltColor sltStyle">
+                   <option value="red"> Vermelho</option>
+                   <option value="yellow"> Amarelo</option>
+                   <option value="blue"> Azul</option>
+                   <option value="green"> Verde</option>
+                   <option value="grey"> Cinzento</option>
                </select> </td>
             </tr>
             <tr>
                 <th class="trOptions">Jogadores</th>
                 <td><i class="fas fa-palette"></i> Jogador 2 </td>
-                <td> <select name="" class="sltColor sltStyle">
-                    <option value="0"> Vermelho</option>
-                    <option value="1"> Amarelo</option>
-                    <option value="2"> Azul</option>
-                    <option value="3"> Verde</option>
-                    <option value="4"> Cinzento</option>
+                <td> <select id="sltPlayer2Color" class="sltColor sltStyle">
+                    <option value="yellow"> Amarelo </option>
+                    <option value="red"> Vermelho </option>
+                    <option value="blue"> Azul </option>
+                    <option value="green"> Verde </option>
+                    <option value="grey"> Cinzento </option>
             </select> </td>
             </tr>
         </table>
@@ -52,8 +52,9 @@
             <!-- <option value="hard" class="boardOption">Dificil</option> -->
         </select></p>
         <hr style="border-color: #000; width: 85%;"><br>
-        <button id="btnSaveOptions" onclick="setBoardLength()">GUARDAR</button>
+        <button id="btnSaveOptions" onclick="setBoardLength(), setLocalColors()">GUARDAR</button>
     </div>
+    <div id="saveOptionsConfirm" class="display-none"> <p>Alterações guardadas com sucesso</p></div>
     <script src="https://kit.fontawesome.com/ff755c1dbb.js" crossorigin="anonymous"></script>
     <script src="options.js"></script>
 </body>

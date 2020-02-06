@@ -95,11 +95,11 @@ function randomNumber() {
 function changeTurn() {
     if (turn) {
         winCheck();
-        chanceRotate()
+        // chanceRotate()
         arrowPlayer(redArrow, 1);
     } else {
         winCheck();
-        chanceRotate()
+        // chanceRotate()
         arrowCPUMedium(2);
     }
     turn = !turn

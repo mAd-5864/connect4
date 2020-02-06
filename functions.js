@@ -8,7 +8,6 @@ console.log(boardLength);
 const board = []
 let count = 0
 
-
 function createBoard() {
 
     document.querySelector('.border').style.width = `${110 * boardLength}px`
@@ -36,22 +35,28 @@ function resetBoard() {
 }
 resetBoard()
 
+/* if (JSON.parse(localData.getItem("playersColors")) == undefined) {
+    colorsObj = {
+        player1Color = "red",
+        player2Color = "yellow"
+    }
+    localStorage.setItem("playersColors", JSON.stringify(colorsObj))
+} */
+const localPlayersColors = JSON.parse(localStorage.getItem("playersColors"))
+
 function colorBoard() {
     for (let i = 0; i < boardLength; i++) {
         for (let j = 0; j < boardLength; j++) {
             if (board[j][i] === 1) {
-                document.querySelector(`#slot-${j}-${i}`).className = 'red'
+                document.querySelector(`#slot-${j}-${i}`).className = localPlayersColors.player1Color
             } else if (board[j][i] === 2) {
-                document.querySelector(`#slot-${j}-${i}`).className = 'yellow'
+                document.querySelector(`#slot-${j}-${i}`).className = localPlayersColors.player2Color
             } else {
                 document.querySelector(`#slot-${j}-${i}`).className = ''
             }
         }
     }
 }
-
-
-
 
 // rotate board function
 function chanceRotate() {
@@ -116,10 +121,10 @@ function dropPiece(column, color) { //column => Número da coluna // color => re
         if (board[i][column] === 0) {
             board[i][column] = color;
             if (board[i][column] === 1) {
-                document.querySelector(`#slot-${i}-${column}`).className = 'red'
+                document.querySelector(`#slot-${i}-${column}`).className = localPlayersColors.player1Color
             }
             if (board[i][column] === 2) {
-                document.querySelector(`#slot-${i}-${column}`).className = 'yellow'
+                document.querySelector(`#slot-${i}-${column}`).className = localPlayersColors.player2Color
             }
             break
         }

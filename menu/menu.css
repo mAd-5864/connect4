@@ -328,3 +328,29 @@ select:focus {
     margin-left: 30px;
     margin: 0 40%;
 }
+
+#saveOptionsConfirm {
+    font-family: "Righteous", cursive;
+    font-size: 15px;
+    border-radius: 50px;
+    color: #F2C53D;
+    width: 700px;
+    height: 40px;
+    text-align: center;
+    margin: 5% 10%
+}
+
+.animationSlideUp {
+    animation-name: slideUp;
+    animation-duration: 1.5s;
+}
+
+.display-none {
+    display: none;
+}
+
+
+@keyframes slideUp {
+    0% { margin: 8% 10%;; color: #fff; }
+    100% { margin: 5% 10%; color: #F2C53D;}
+}

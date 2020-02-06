@@ -111,6 +111,52 @@ button:focus {
     background: linear-gradient(to bottom, #FFF125 0%, #F2C53D 100%);
 }
 
+.board button.green {
+    background: #05d428;
+    background: linear-gradient(to bottom, #3a9217 0%, #05d428 100%);
+}
+
+.board button.blue {
+    background: #095ab8;
+    background: linear-gradient(to bottom, #1613dd 0%, #095ab8 100%);
+}
+
+.board button.grey {
+    background: #999c9e;
+    background: linear-gradient(to bottom, #7a7a9c 0%, #999c9e 100%);
+}
+
+.red {
+    background: #ad0505;
+    background: linear-gradient(to bottom, #ff1616 0%, #ad0505 100%);
+    border: 1px solid #ad0505;
+}
+
+.yellow {
+    background: #F2C53D;
+    background: linear-gradient(to bottom, #FFF125 0%, #F2C53D 100%);
+    border: 1px solid #F2C53D;
+}
+
+.green {
+    background: #05d428;
+    background: linear-gradient(to bottom, #3a9217 0%, #05d428 100%);
+    border: 1px solid#05d428;
+}
+
+.blue{
+    background: #095ab8;
+    background: linear-gradient(to bottom, rgb(22, 19, 221) 0%, #095ab8 100%);
+    border: 1px solid #095ab8;
+}
+
+.grey {
+    background: #575858;
+    background: linear-gradient(to bottom, #454552 0%, #575858 100%);
+    border: 1px solid #575858;
+}
+
+
 #rotate {
     background: #FF930D;
     background: linear-gradient(to bottom, #FFB50D 0%, #FF930D 100%);
@@ -130,23 +176,19 @@ button:focus {
 }
 
 #hubPlayer1 {
-    background: linear-gradient(to bottom, #ff1616 0%, #ad0505 100%);
     color: #000;
     position: absolute;
     width: 200px;
     height: 75px;
-    border: solid 1px #ad0505;
     border-radius: 50px;
     margin: 100px 0 0 -600px;
 }
 
 #hubPlayer2 {
-    background: linear-gradient(to bottom, #FFF125 0%, #F2C53D 100%);
     color: #000;
     position: absolute;
     width: 200px;
     height: 75px;
-    border: solid 1px #F2C53D;
     border-radius: 50px;
     margin: 100px 0 0 400px;
 }

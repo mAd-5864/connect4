@@ -5,7 +5,7 @@ localData.sort(function(a, b) {
 }).reverse();
 
 if (localData != undefined) {
-    for (let i = 0; i < localData.length; i++) {
+    for (let i = 0; i < 10; i++) {
             if (localData[i]) document.getElementById(`txt${i + 1}Player`).innerHTML = `${i + 1}º - ${localData[i].player} : <span class="text-danger">${localData[i].points} </span> LP`
     }
 }
