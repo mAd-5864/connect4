@@ -10,7 +10,6 @@ function arrowCPU(value) {
         arrow.disabled = true
     }
     randomNumber()
-    console.log("coluna:" + number);
     console.log("entrou no arrowCPU");
     if (board[0][number] !== 0 && value === 2) {
         console.log(`Está ocupada por ${board[0][number]}`);
@@ -20,7 +19,6 @@ function arrowCPU(value) {
             dropPiece(number, value)
         }, 1000)
         setTimeout(function() {
-            console.log("mudou de turno")
             changeTurn()
         }, 1000)
     }
@@ -42,22 +40,26 @@ function check3CPU() {
     boardSize = 0
     for (let x = 0; x < boardLength; x++) {
         for (let y = 0; y < boardLength; y++) {
-            if (x < boardLength - 3 && board[y][x] != 0 && board[y][x + 1] == board[y][x]) {
+            if (x < boardLength - 3 && board[y][x] != 0 && board[y][x + 1] == board[y][x] && board[y][x + 2] == board[y][x] && board[y][x + 3] == 0) {
                 // verificar horizontal para a direita
-                blockOpponent(x, y, 0, 2, 0, 3);
-                console.log('bot 1');
-            } else if (y > 3 && board[y][x] != 0 && board[y - 1][x] == board[y][x]) {
+                blockOpponent(x, y, 0, 3);
+                console.log('bot H-R');
+            } else if (x > 2 && board[y][x] != 0 && board[y][x - 1] == board[y][x] && board[y][x - 2] == board[y][x] && board[y][x - 3] == 0) {
+                // verificar horizontal para a direita
+                blockOpponent(x, y, 0, -3);
+                console.log('bot H-L');
+            } else if (y > 3 && board[y][x] != 0 && board[y - 1][x] == board[y][x] && board[y - 2][x] == board[y][x] && board[y - 3][x] == 0) {
                 // verificar vertical
-                blockOpponent(x, y, -2, 0, -3, 0);
-                console.log('bot 2');
-            } else if (x < boardLength - 3 && y < boardLength - 3 && board[y][x] != 0 && board[y + 1][x + 1] == board[y][x]) {
+                blockOpponent(x, y, -3, 0);
+                console.log('bot V');
+            } else if (x < boardLength - 3 && y < boardLength - 3 && board[y][x] != 0 && board[y + 1][x + 1] == board[y][x] && board[y + 2][x + 2] == board[y][x] && board[y + 3][x + 3] == 0) {
                 // verificar diagonal para baixo
-                blockOpponent(x, y, 2, 2, 3, 3);
-                console.log('bot 3');
-            } else if (x < boardLength - 3 && y > 2 && board[y][x] != 0 && board[y - 1][x + 1] == board[y][x]) {
+                blockOpponent(x, y, 3, 3);
+                console.log('bot D-D');
+            } else if (x < boardLength - 3 && y > 2 && board[y][x] != 0 && board[y - 1][x + 1] == board[y][x] && board[y - 2][x + 2] == board[y][x] && board[y - 3][x + 3] == 0) {
                 // verificar diagonal para cima
-                blockOpponent(x, y, -2, 2, -3, 3);
-                console.log('bot 4');
+                blockOpponent(x, y, -3, 3);
+                console.log('bot D-U');
             } else { attempts++ }
             boardSize++
         }
@@ -67,19 +69,18 @@ function check3CPU() {
     }
 }
 
-function blockOpponent(x, y, first, second, third, forth) {
-    if (board[y + first][x + second] == board[y][x]) {
-        console.log(board[y + third - 1][x + forth]);
-        console.log("third: " + y);
-        if (y < boardLength && board[y + third][x + forth] == 0) {
-            dropPiece(x + forth, 2)
-            changeTurn()
-            console.log("Pensavas!!");
-        } else if (y > boardLength + 1 && [y + third + 1][x + forth] == 0 && board[y + third][x + forth] == 0) {
-            dropPiece(x + forth, 2)
-            changeTurn()
-            console.log("Pensavas!! 2");
-        } else attempts++
+function blockOpponent(x, y, yFourth, xFourth, ) {
+    console.log("y: " + [y + yFourth + 1]);
+    console.log("board length: " + boardLength);
+
+
+    if (y + yFourth < boardLength - 1 && board[y + yFourth][x + xFourth] == 0 && board[y + yFourth + 1][x + xFourth] == 0) {
+        attempts++
+        console.log("Pensavas!!");
+    } else if (board[y + yFourth][x + xFourth] == 0) {
+        dropPiece(x + xFourth, 2)
+        changeTurn()
+        console.log("Pensavas!! 2");
     } else attempts++
 }
 
@@ -94,9 +95,11 @@ function randomNumber() {
 function changeTurn() {
     if (turn) {
         winCheck();
+        chanceRotate()
         arrowPlayer(redArrow, 1);
     } else {
         winCheck();
+        chanceRotate()
         arrowCPUMedium(2);
     }
     turn = !turn
@@ -106,17 +109,15 @@ function changeTurn() {
 function findWhoWon(y, x) {
     if (board[y][x] === 1) {
         showWinModal(true)
-        resetBoard();
     } else if (board[y][x] === 2) {
         showWinModal()
-        resetBoard();
     }
 }
 
 //alert box shown on win situation
 function showWinModal(winner) {
     let winModal = document.getElementById("winModal")
-    document.getElementById("playAgain").addEventListener("click", function() { winModal.style.display = "none" })
+    document.getElementById("playAgain").addEventListener("click", function() { winModal.style.display = "none", resetBoard(); })
     if (winner) {
         document.getElementById("winPlayerName").innerHTML = "Ganhaste!"
     } else {
