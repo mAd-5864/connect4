@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
 body {
     background: #000;
     text-align: center;
-    font-family: 'Bungee', cursive;
+    font-family: 'Righteous', cursive;
 }
 
 body p {

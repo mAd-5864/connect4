@@ -62,3 +62,13 @@ input:-webkit-autofill {
     font-size: 25px;
     color: #000;
 }
+
+#btnStart:hover,
+#btnBackHome:hover, 
+#playAgain:hover,
+#goToScores:hover,
+#leave:hover,
+#seeBoard:hover {
+    background: #ff1616;
+    border: 2px solid #ad0505;
+}

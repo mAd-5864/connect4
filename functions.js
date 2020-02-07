@@ -184,7 +184,7 @@ function arrowPlayer(color, value) {
     for (let i = 0; i < boardLength; i++) {
         arrow = document.querySelector(`#arrow${i}`)
         arrow.disabled = false
-        arrow.innerHTML = `<img src="../logos/arrow-${player1Color}.png"></img>`
+        arrow.innerHTML = color
         arrow.onclick = function() {
             if (board[0][i] === 0) {
                 dropPiece(i, value);
