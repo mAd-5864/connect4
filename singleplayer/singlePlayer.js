@@ -15,7 +15,6 @@ function arrowCPU(value) {
         arrow.disabled = true
     }
     randomNumber()
-    console.log("entrou no arrowCPU");
     if (board[0][number] !== 0 && value === 2) {
         console.log(`Está ocupada por ${board[0][number]}`);
         arrowCPU(value)
@@ -31,7 +30,6 @@ function arrowCPU(value) {
 
 //medium difficulty CPU
 function arrowCPUMedium(value) {
-    console.log("ARROWCPUMEDIUM!!!");
     for (let i = 0; i < boardLength; i++) {
         arrow = document.querySelector(`#arrow${i}`)
         arrow.disabled = true
@@ -76,17 +74,11 @@ function check3CPU() {
 }
 
 function blockOpponent(x, y, yFourth, xFourth, ) {
-    console.log("y: " + [y + yFourth + 1]);
-    console.log("board length: " + boardLength);
-
-
     if (y + yFourth < boardLength - 1 && board[y + yFourth][x + xFourth] == 0 && board[y + yFourth + 1][x + xFourth] == 0) {
         attempts++
-        console.log("Pensavas!!");
     } else if (board[y + yFourth][x + xFourth] == 0) {
         dropPiece(x + xFourth, 2)
         changeTurn()
-        console.log("Pensavas!! 2");
     } else attempts++
 }
 
@@ -98,7 +90,7 @@ function randomNumber() {
 }
 
 let botDificulty = JSON.parse(localStorage.getItem("botDificulty"))
-//function to alternate turns
+    //function to alternate turns
 function changeTurn() {
     if (turn) {
         winCheck();
@@ -108,32 +100,34 @@ function changeTurn() {
         winCheck();
         chanceRotate();
         switch (botDificulty) {
-            case "easy": arrowCPU(2);
-            break;
-            case "medium": arrowCPUMedium(2);
-            break;
+            case "easy":
+                arrowCPU(2);
+                break;
+            case "medium":
+                arrowCPUMedium(2);
+                break;
         }
     }
     turn = !turn
 }
 
 //trigger alert to show winner
-function findWhoWon(y, x) {
+function findWhoWon(y, x, direction) {
     if (board[y][x] === 1) {
-        showWinModal(true)
+        showWinModal(true, direction)
     } else if (board[y][x] === 2) {
-        showWinModal()
+        showWinModal(false, direction)
     }
 }
 
 //alert box shown on win situation
-function showWinModal(winner) {
+function showWinModal(winner, direction) {
     let winModal = document.getElementById("winModal")
     document.getElementById("playAgain").addEventListener("click", function() { winModal.style.display = "none", resetBoard(); })
     if (winner) {
-        document.getElementById("winPlayerName").innerHTML = "Ganhaste!"
+        document.getElementById("winPlayerName").innerHTML = `Ganhaste na ${direction}!`
     } else {
-        document.getElementById("winPlayerName").innerHTML = "Perdeste!"
+        document.getElementById("winPlayerName").innerHTML = `Perdeste na ${direction}!`
     }
     winModal.style.display = "block"
 }

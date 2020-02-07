@@ -3,9 +3,13 @@ let playTime, display;
 let timerStart
 playTime = 15;
 
-document.getElementById("hubPlayer1").className = player1Color
-document.getElementById("hubPlayer2").className = player2Color
-
+let hubPlayer1 = document.getElementById("hubPlayer1")
+let hubPlayer2 = document.getElementById("hubPlayer2")
+hubPlayer1.className = player1Color
+hubPlayer1.style.marginLeft = boardLength * -50 + -350 + 'px'
+hubPlayer2.className = player2Color
+hubPlayer2.style.marginLeft = boardLength * 50 + 150 + 'px'
+document.getElementById("hubTimer").style.marginLeft = boardLength * 50 + 150 + 'px'
 timerDisplay = document.querySelector('#timer');
 
 function changeTurn() {
@@ -75,6 +79,7 @@ function setSessionStorage(event) {
     event.preventDefault()
     const txtPlayer1 = document.getElementById("player1").value
     const txtPlayer2 = document.getElementById("player2").value
+
     if (txtPlayer1 != "" && txtPlayer2 != "") {
         document.getElementById("InGamePlayer1").innerHTML = txtPlayer1
         document.getElementById("InGamePlayer2").innerHTML = txtPlayer2
@@ -92,13 +97,11 @@ function setSessionStorage(event) {
 }
 
 function saveLocalData() {
-    if (localStorage.getItem("playersNames") == null) {
+    if (localStorage.getItem("playersNames")) {
         if (JSON.parse(sessionStorage.getItem("nome")) != null) {
             localStorage.setItem("playersNames", JSON.stringify(JSON.parse(sessionStorage.getItem("nome"))))
         }
-    } else
-
-    if (localStorage.getItem("playersNames") != null) {
+    } else if (localStorage.getItem("playersNames") != null) {
         names = JSON.parse(localStorage.getItem("playersNames"))
         for (let i = 0; i < JSON.parse(localStorage.getItem("playersNames")).length; i++) {
 
@@ -193,26 +196,28 @@ function refreshPoints() {
     }
 }
 
-function findWhoWon(y, x) {
+function findWhoWon(y, x, direction) {
+    console.log("direction: " + direction);
+
     if (board[y][x] === 1) {
         clearInterval(timerStart)
         player1Win = "true"
         player2Win = "false"
-        showWinModal()
+        showWinModal(direction)
     } else if (board[y][x] === 2) {
         clearInterval(timerStart)
         player1Win = "false"
         player2Win = "true"
-        showWinModal()
+        showWinModal(direction)
     }
     refreshPoints()
 }
 //alert box shown on win situation
-function showWinModal() {
+function showWinModal(direction) {
     document.getElementById("playAgain").addEventListener("click", function() { winModal.style.display = "", resetBoard(); })
     sessionData = JSON.parse(sessionStorage.getItem("nome"))
-    if (player1Win == "true") document.getElementById("winPlayerName").innerHTML = `${sessionData[0].player} Ganhou!`
-    if (player2Win == "true") document.getElementById("winPlayerName").innerHTML = `${sessionData[1].player} Ganhou!`
+    if (player1Win == "true") document.getElementById("winPlayerName").innerHTML = `${sessionData[0].player} Ganhou na ${direction}!`
+    if (player2Win == "true") document.getElementById("winPlayerName").innerHTML = `${sessionData[1].player} Ganhou na ${direction}!`
     winModal.style.display = "block"
 }
 
