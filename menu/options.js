@@ -16,7 +16,7 @@ function setPlayerColors() {
         document.getElementById("saveOptionsConfirm").className = "animationSlideUp"
         setTimeout(() => {
             location.reload()
-        }, 2000);
+        }, 5000);
     } else alert("As cores têm de ser diferentes")
 }
 
