@@ -356,3 +356,10 @@ button:focus {
     color: #000;
     margin-bottom: 5px;
 }
+
+#playAgain:hover,
+#leave:hover,
+#seeBoard:hover {
+    background: #ff1616;
+    border: 2px solid #ad0505;
+}
