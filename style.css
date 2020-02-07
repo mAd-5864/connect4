@@ -267,7 +267,7 @@ button:focus {
 .winContainer {
     background: linear-gradient(to bottom, #FFF125 0%, #F2C53D 100%);
     width: 400px;
-    height: 250px;
+    height: 300px;
     position: relative;
     margin: 15% auto;
     border-radius: 50px;
