@@ -8,7 +8,6 @@ document.getElementById("hubPlayer2").className = player2Color
 
 timerDisplay = document.querySelector('#timer');
 
-
 function changeTurn() {
     if (turn) {
         clearInterval(timerStart)
