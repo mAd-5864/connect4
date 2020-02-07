@@ -102,11 +102,11 @@ let botDificulty = JSON.parse(localStorage.getItem("botDificulty"))
 function changeTurn() {
     if (turn) {
         winCheck();
-        // chanceRotate()
+        chanceRotate()
         arrowPlayer(player1Arrow, 1);
     } else {
         winCheck();
-        // chanceRotate();
+        chanceRotate();
         switch (botDificulty) {
             case "easy": arrowCPU(2);
             break;
