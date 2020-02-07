@@ -56,7 +56,6 @@ resetBoard()
     }
     localStorage.setItem("playersColors", JSON.stringify(colorsObj))
 } */
-const localPlayersColors = JSON.parse(localStorage.getItem("playersColors"))
 
 function colorBoard() {
     for (let i = 0; i < boardLength; i++) {
@@ -131,6 +130,7 @@ function dropTroughColumn(x, freeSpaces) {
 
 // function to drop the piece trough the column
 function dropPiece(column, color) { //column => Número da coluna // color => red = 1 yellow = 2
+    console.log(player1Color);
     for (let i = boardLength - 1; i >= 0; i--) {
         if (board[i][column] === 0) {
             board[i][column] = color;

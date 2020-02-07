@@ -51,7 +51,8 @@ input:-webkit-autofill {
 }
 
 .inputs:focus,
-#btnStart:focus {
+#btnStart:focus,
+#btnBackHome:focus {
     outline: 0;
 }
 
@@ -61,4 +62,14 @@ input:-webkit-autofill {
     padding: 30px;
     font-size: 25px;
     color: #000;
+}
+
+#btnStart:hover,
+#btnBackHome:hover, 
+#playAgain:hover,
+#goToScores:hover,
+#leave:hover,
+#seeBoard:hover {
+    background: #ff1616;
+    border: 2px solid #ad0505;
 }

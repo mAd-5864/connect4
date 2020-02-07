@@ -3,8 +3,13 @@ let numberM = 0
 let attempts
 let boardSize
 
+if (localStorage.getItem("botDificulty") == undefined) {
+    localStorage.setItem("botDificulty", "easy")
+}
+
 //easy difficulty CPU
 function arrowCPU(value) {
+    console.log("ARROWCPU!!!");
     for (let i = 0; i < boardLength; i++) {
         arrow = document.querySelector(`#arrow${i}`)
         arrow.disabled = true
@@ -26,6 +31,7 @@ function arrowCPU(value) {
 
 //medium difficulty CPU
 function arrowCPUMedium(value) {
+    console.log("ARROWCPUMEDIUM!!!");
     for (let i = 0; i < boardLength; i++) {
         arrow = document.querySelector(`#arrow${i}`)
         arrow.disabled = true
@@ -91,16 +97,22 @@ function randomNumber() {
     numberM = number
 }
 
+let botDificulty = JSON.parse(localStorage.getItem("botDificulty"))
 //function to alternate turns
 function changeTurn() {
     if (turn) {
         winCheck();
         chanceRotate()
-        arrowPlayer(player1Color, 1);
+        arrowPlayer(player1Arrow, 1);
     } else {
         winCheck();
-        // chanceRotate()
-        arrowCPUMedium(2);
+        chanceRotate();
+        switch (botDificulty) {
+            case "easy": arrowCPU(2);
+            break;
+            case "medium": arrowCPUMedium(2);
+            break;
+        }
     }
     turn = !turn
 }
@@ -125,3 +137,11 @@ function showWinModal(winner) {
     }
     winModal.style.display = "block"
 }
+
+document.getElementById("seeBoard").addEventListener("click", function() {
+    winModal.style.display = "none"
+    for (let i = 0; i < boardLength; i++) {
+        arrow = document.querySelector(`#arrow${i}`)
+        arrow.disabled = true
+    }
+})

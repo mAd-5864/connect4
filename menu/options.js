@@ -18,5 +18,10 @@ function setPlayerColors() {
             location.reload()
         }, 2000);
     } else alert("As cores têm de ser diferentes")
+}
 
+function setBotDificulty() {
+    const categoryElement = document.querySelector("#sltDifficultyAI")
+    const categoryValue = categoryElement.options[categoryElement.selectedIndex].value
+    localStorage.setItem("botDificulty", JSON.stringify(categoryValue))
 }

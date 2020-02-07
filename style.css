@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
 body {
     background: #000;
     text-align: center;
-    font-family: 'Bungee', cursive;
+    font-family: 'Righteous', cursive;
 }
 
 body p {
@@ -306,4 +307,11 @@ button:focus {
     font-size: 25px;
     color: #000;
     margin-bottom: 5px;
+}
+
+#playAgain:hover,
+#leave:hover,
+#seeBoard:hover {
+    background: #ff1616;
+    border: 2px solid #ad0505;
 }
