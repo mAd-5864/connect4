@@ -27,14 +27,6 @@
         </div>
     </div>
     <script>
-        let inicialObj
-        if (localStorage.getItem("playersColors") == undefined) {
-        inicialObj = {
-        player1Color: "red",
-        player2Color: "yellow"
-    }
-    localStorage.setItem("playersColors", JSON.stringify(inicialObj))
-}
         let modal = document.getElementById("myModal");
         window.onload = function() {
             modal.style.display = "block";
