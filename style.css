@@ -245,7 +245,7 @@ button:focus {
     margin: 550px 0 0 450px;
 }
 
-.winModal {
+.winModal, .rotateModal {
     display: none;
     /* Hidden by default */
     position: fixed;
@@ -274,6 +274,22 @@ button:focus {
     text-align: center;
 }
 
+.rotateContainer {
+    background: linear-gradient(to bottom, #FFF125 0%, #F2C53D 100%);
+    width: 300px;
+    height: 150px;
+    position: relative;
+    margin: 15% auto;
+    border-radius: 20px;
+    text-align: center;
+}
+
+#txtRotate {
+    color: #000;
+    padding: 10px;
+}
+
+#confirmRotate,
 #seeBoard,
 #btnStart,
 #playAgain,
@@ -291,6 +307,11 @@ button:focus {
     margin: 10px 0px;
 }
 
+#confirmRotate {
+    border-radius: 15px;
+}
+
+#confirmRotate,
 #seeBoard,
 #btnStart,
 #playAgain,
@@ -309,6 +330,7 @@ button:focus {
     margin-bottom: 5px;
 }
 
+#confirmRotate:hover,
 #playAgain:hover,
 #leave:hover,
 #seeBoard:hover {
