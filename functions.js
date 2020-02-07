@@ -57,9 +57,7 @@ function colorBoard() {
                 document.querySelector(`#slot-${j}-${i}`).className = player1Color
             } else if (board[j][i] === 2) {
                 document.querySelector(`#slot-${j}-${i}`).className = player2Color
-            } else {
-                document.querySelector(`#slot-${j}-${i}`).className = ''
-            }
+            } else document.querySelector(`#slot-${j}-${i}`).className = ''
         }
     }
 }
@@ -68,19 +66,15 @@ function colorBoard() {
 function chanceRotate() {
     let chance = Math.random() * 10;
     if (chance > 9.35) {
-        console.log("Rodou Direita");
         alert("Rodou 90° para a direita")
         rotateMatrixRight(board)
         dropAllPieces()
     } else if (chance < 0.35) {
-        console.log("Rodou Esquerda");
         alert("Rodou 90° para a esquerda")
         rotateMatrixRight(board)
         rotateMatrixRight(board)
         rotateMatrixRight(board)
         dropAllPieces()
-    } else {
-        console.log("Não rodou");
     }
 }
 
@@ -123,7 +117,6 @@ function dropTroughColumn(x, freeSpaces) {
 
 // function to drop the piece trough the column
 function dropPiece(column, color) { //column => Número da coluna // color => red = 1 yellow = 2
-    console.log(player1Color);
     for (let i = boardLength - 1; i >= 0; i--) {
         if (board[i][column] === 0) {
             board[i][column] = color;
@@ -181,7 +174,6 @@ function arrowPlayer(color, value) {
         arrow.onclick = function() {
             if (board[0][i] === 0) {
                 dropPiece(i, value);
-                // setTimeout(function(){winCheck()}, 500)
                 setTimeout(function() { changeTurn() }, 0)
             } else { window.alert('Coluna cheia!') }
         }
