@@ -51,7 +51,8 @@ input:-webkit-autofill {
 }
 
 .inputs:focus,
-#btnStart:focus {
+#btnStart:focus,
+#btnBackHome:focus {
     outline: 0;
 }
 
