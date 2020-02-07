@@ -69,12 +69,12 @@ function chanceRotate() {
     let chance = Math.random() * 10;
     if (chance > 9.35) {
         console.log("Rodou Direita");
-        alert("Rodou 90° para a direita")
+        showRotateModal(1)
         rotateMatrixRight(board)
         dropAllPieces()
     } else if (chance < 0.35) {
         console.log("Rodou Esquerda");
-        alert("Rodou 90° para a esquerda")
+        showRotateModal(2)
         rotateMatrixRight(board)
         rotateMatrixRight(board)
         rotateMatrixRight(board)
@@ -82,6 +82,19 @@ function chanceRotate() {
     } else {
         console.log("Não rodou");
     }
+}
+
+function showRotateModal(rotation) {
+    let rotateModal = document.getElementById("rotateModal")
+    if (rotation == 1) {
+        document.getElementById("txtRotate").innerHTML = "Rodou 90º para a direita"
+    } else if (rotation == 2) { 
+        document.getElementById("txtRotate").innerHTML = "Rodou 90º para a esquerda" 
+    }
+    document.getElementById("confirmRotate").addEventListener("click", function() {
+        rotateModal.style.display = "none"
+    })
+    rotateModal.style.display = "block"
 }
 
 function rotateMatrixRight(matrix) {
