@@ -52,7 +52,8 @@ button:focus {
     transition-timing-function: ease;
 }
 
-.button:hover {
+.button:hover, 
+#btnSaveOptions:hover {
     background: #ff1616;
     border: 2px solid #ad0505;
     cursor: pointer;
