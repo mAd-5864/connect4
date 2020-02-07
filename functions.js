@@ -49,13 +49,6 @@ function resetBoard() {
 }
 resetBoard()
 
-/* if (JSON.parse(localData.getItem("playersColors")) == undefined) {
-    colorsObj = {
-        player1Color = "red",
-        player2Color = "yellow"
-    }
-    localStorage.setItem("playersColors", JSON.stringify(colorsObj))
-} */
 
 function colorBoard() {
     for (let i = 0; i < boardLength; i++) {
@@ -151,26 +144,26 @@ function winCheck() {
     for (let x = 0; x < boardLength; x++) {
         for (let y = 0; y < boardLength; y++) {
             if (x < boardLength - 3 && board[y][x] != 0 && board[y][x + 1] == board[y][x]) {
-                check4(x, y, 0, 2, 0, 3);
+                check4(x, y, 0, 2, 0, 3, "horizontal");
             }
             if (y < boardLength - 3 && board[y][x] != 0 && board[y + 1][x] == board[y][x]) {
-                check4(x, y, 2, 0, 3, 0);
+                check4(x, y, 2, 0, 3, 0, "vertical");
             }
             if (x < boardLength - 3 && y < boardLength - 3 && board[y][x] != 0 && board[y + 1][x + 1] == board[y][x]) {
-                check4(x, y, 2, 2, 3, 3);
+                check4(x, y, 2, 2, 3, 3, "diagonal");
             }
             if (x < boardLength - 3 && y > 2 && board[y][x] != 0 && board[y - 1][x + 1] == board[y][x]) {
-                check4(x, y, -2, 2, -3, 3);
+                check4(x, y, -2, 2, -3, 3, "diagonal");
             }
         }
     }
 }
 
-function check4(x, y, first, second, third, forth) {
+function check4(x, y, first, second, third, forth, direction) {
     if (board[y + first][x + second] == board[y][x]) {
         if (board[y + third][x + forth] == board[y][x]) {
             count = 0
-            findWhoWon(y, x);
+            findWhoWon(y, x, direction);
         }
     }
 }
