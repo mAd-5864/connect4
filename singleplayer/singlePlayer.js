@@ -7,7 +7,8 @@ if (localStorage.getItem("botDificulty") == undefined) {
     localStorage.setItem("botDificulty", "easy")
 }
 
-//easy difficulty CPU
+let botDificulty = JSON.parse(localStorage.getItem("botDificulty"))
+    //easy difficulty CPU
 function arrowCPU(value) {
     console.log("ARROWCPU!!!");
     for (let i = 0; i < boardLength; i++) {
@@ -47,23 +48,24 @@ function check3CPU() {
             if (x < boardLength - 3 && board[y][x] != 0 && board[y][x + 1] == board[y][x] && board[y][x + 2] == board[y][x] && board[y][x + 3] == 0) {
                 // verificar horizontal para a direita
                 blockOpponent(x, y, 0, 3);
-                console.log('bot H-R');
             } else if (x > 2 && board[y][x] != 0 && board[y][x - 1] == board[y][x] && board[y][x - 2] == board[y][x] && board[y][x - 3] == 0) {
                 // verificar horizontal para a direita
                 blockOpponent(x, y, 0, -3);
-                console.log('bot H-L');
             } else if (y > 3 && board[y][x] != 0 && board[y - 1][x] == board[y][x] && board[y - 2][x] == board[y][x] && board[y - 3][x] == 0) {
                 // verificar vertical
                 blockOpponent(x, y, -3, 0);
-                console.log('bot V');
             } else if (x < boardLength - 3 && y < boardLength - 3 && board[y][x] != 0 && board[y + 1][x + 1] == board[y][x] && board[y + 2][x + 2] == board[y][x] && board[y + 3][x + 3] == 0) {
                 // verificar diagonal para baixo
                 blockOpponent(x, y, 3, 3);
-                console.log('bot D-D');
             } else if (x < boardLength - 3 && y > 2 && board[y][x] != 0 && board[y - 1][x + 1] == board[y][x] && board[y - 2][x + 2] == board[y][x] && board[y - 3][x + 3] == 0) {
                 // verificar diagonal para cima
                 blockOpponent(x, y, -3, 3);
-                console.log('bot D-U');
+            } else if (x < boardLength - 3 && y < boardLength - 3 && board[y][x] != 0 && board[y + 1][x - 1] == board[y][x] && board[y + 2][x - 2] == board[y][x] && board[y + 3][x - 3] == 0) {
+                // verificar diagonal para baixo
+                blockOpponent(x, y, 3, -3);
+            } else if (x < boardLength - 3 && y > 2 && board[y][x] != 0 && board[y - 1][x - 1] == board[y][x] && board[y - 2][x - 2] == board[y][x] && board[y - 3][x - 3] == 0) {
+                // verificar diagonal para cima
+                blockOpponent(x, y, -3, -3);
             } else { attempts++ }
             boardSize++
         }
@@ -76,7 +78,7 @@ function check3CPU() {
 function blockOpponent(x, y, yFourth, xFourth, ) {
     if (y + yFourth < boardLength - 1 && board[y + yFourth][x + xFourth] == 0 && board[y + yFourth + 1][x + xFourth] == 0) {
         attempts++
-    } else if (board[y + yFourth][x + xFourth] == 0) {
+    } else if (board[y + yFourth][x + xFourth] == 0 && attempts == boardSize) {
         dropPiece(x + xFourth, 2)
         changeTurn()
     } else attempts++
@@ -89,8 +91,7 @@ function randomNumber() {
     numberM = number
 }
 
-let botDificulty = JSON.parse(localStorage.getItem("botDificulty"))
-    //function to alternate turns
+//function to alternate turns
 function changeTurn() {
     if (turn) {
         winCheck();

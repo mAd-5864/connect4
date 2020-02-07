@@ -41,7 +41,6 @@ function startTimer(duration, timerDisplay) {
 
         timerDisplay.textContent = seconds + "s";
 
-        console.log(winModal.style.display);
         if (--timer < 0 && winModal.style.display === "") {
             changeTurn()
             timer = duration;
@@ -125,7 +124,6 @@ function saveLocalData() {
             if (matchesPlayer2 == -1) {
                 names.push(obj2)
             }
-            console.log(names);
             localStorage.setItem("playersNames", JSON.stringify(names))
         }
     }
@@ -197,8 +195,6 @@ function refreshPoints() {
 }
 
 function findWhoWon(y, x, direction) {
-    console.log("direction: " + direction);
-
     if (board[y][x] === 1) {
         clearInterval(timerStart)
         player1Win = "true"
