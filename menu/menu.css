@@ -341,9 +341,25 @@ select:focus {
     margin: 5% 10%
 }
 
+#alertSameColors {
+    font-family: "Righteous", cursive;
+    font-size: 15px;
+    border-radius: 50px;
+    color: #f0251e;
+    width: 700px;
+    height: 40px;
+    text-align: center;
+    margin: 5% 10%
+}
+
 .animationSlideUp {
     animation-name: slideUp;
     animation-duration: 1.5s;
+}
+
+.animationBlink {
+    animation-name: txtBlink;
+    animation-duration: 2s;
 }
 
 .display-none {
@@ -354,4 +370,12 @@ select:focus {
 @keyframes slideUp {
     0% { margin: 8% 10%;; color: #fff; }
     100% { margin: 5% 10%; color: #F2C53D;}
+}
+
+@keyframes txtBlink {
+    0% { margin: 5% 10%;; color: #f0251e; }
+    25% { margin: 5% 10%; color: #fff;}
+    50% { margin: 5% 10%;; color: #f0251e; }
+    75% { margin: 5% 10%; color: #fff;}
+    100% { margin: 5% 10%; color: #f0251e;}
 }

@@ -96,7 +96,7 @@ function setSessionStorage(event) {
 }
 
 function saveLocalData() {
-    if (localStorage.getItem("playersNames")) {
+    if (localStorage.getItem("playersNames") == undefined) {
         if (JSON.parse(sessionStorage.getItem("nome")) != null) {
             localStorage.setItem("playersNames", JSON.stringify(JSON.parse(sessionStorage.getItem("nome"))))
         }

@@ -66,12 +66,10 @@ function colorBoard() {
 function chanceRotate() {
     let chance = Math.random() * 10;
     if (chance > 9.35) {
-        console.log("Rodou Direita");
         showRotateModal(1)
         rotateMatrixRight(board)
         dropAllPieces()
     } else if (chance < 0.35) {
-        console.log("Rodou Esquerda");
         showRotateModal(2)
         rotateMatrixRight(board)
         rotateMatrixRight(board)
