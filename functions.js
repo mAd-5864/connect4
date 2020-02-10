@@ -65,11 +65,11 @@ function colorBoard() {
 // rotate board function
 function chanceRotate() {
     let chance = Math.random() * 10;
-    if (chance > 9.35) {
+    if (chance > 9.5) {
         showRotateModal(1)
         rotateMatrixRight(board)
         dropAllPieces()
-    } else if (chance < 0.35) {
+    } else if (chance < 0.5) {
         showRotateModal(2)
         rotateMatrixRight(board)
         rotateMatrixRight(board)
@@ -82,8 +82,8 @@ function showRotateModal(rotation) {
     let rotateModal = document.getElementById("rotateModal")
     if (rotation == 1) {
         document.getElementById("txtRotate").innerHTML = "Rodou 90º para a direita"
-    } else if (rotation == 2) { 
-        document.getElementById("txtRotate").innerHTML = "Rodou 90º para a esquerda" 
+    } else if (rotation == 2) {
+        document.getElementById("txtRotate").innerHTML = "Rodou 90º para a esquerda"
     }
     document.getElementById("confirmRotate").addEventListener("click", function() {
         rotateModal.style.display = "none"
